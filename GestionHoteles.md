@@ -1,4 +1,4 @@
-# PRESENTACIÓN Gestión de Hotel.
+# Gestión de Hoteles.
 
 **Universidad**: Universidad Nacional del Nordeste.
 
