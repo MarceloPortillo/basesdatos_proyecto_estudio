@@ -7,9 +7,11 @@
 **Asignatura**: Bases de Datos I (FaCENA-UNNE)
 
 **Integrantes**:
- - Sed vel lectus nec lectus placerat laoreet et sed est.
- - Sed ac justo ac mauris porttitor convallis non sit amet felis.
- - In tincidunt augue sed molestie malesuada.
+1.	Ortellado Agostina Anyelen.                        44224567.
+2.	Portillo Juan Marcelo.                             36460188.
+3.	Rodríguez Gastón Osvaldo.                          32732916.
+4.	Romero Dayana Karin.                               35497094.
+
 
 **Año**: 2024
 
