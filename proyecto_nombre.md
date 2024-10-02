@@ -1,17 +1,20 @@
-# Proyecto de Estudio!
-    
-**Estructura del documento principal:**
+# PRESENTACIÓN Gestión de Hotel.
 
-# PRESENTACIÓN (Título/Nombre Proyecto)
+**Universidad**: Universidad Nacional del Nordeste.
 
-**Asignatura**: Bases de Datos I (FaCENA-UNNE)
+**Facultad**: Facultad de Ciencias Exactas y Naturales y Agrimensura.
+
+**Carrera**: Licenciatura en Sistemas de Información.
+
+**Asignatura**:Bases de Datos I.
+
+**Docente**: Villegas Darío.
 
 **Integrantes**:
 1.	Ortellado Agostina Anyelen.                        44224567.
 2.	Portillo Juan Marcelo.                             36460188.
 3.	Rodríguez Gastón Osvaldo.                          32732916.
 4.	Romero Dayana Karin.                               35497094.
-
 
 **Año**: 2024
 
