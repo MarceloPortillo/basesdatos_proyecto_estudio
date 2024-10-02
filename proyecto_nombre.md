@@ -56,7 +56,7 @@ Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris t
 
 ### Diagrama relacional
 ![diagrama_relacional]
-(https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/ImagenCorregida.png)
+(https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/diagramaRelacional.png)
 
 
 ### Diccionario de datos
