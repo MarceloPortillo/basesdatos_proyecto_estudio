@@ -1,4 +1,4 @@
-# Gestión de Hoteles.
+# Gestión de Hoteles
 
 **Universidad**: Universidad Nacional del Nordeste.
 
@@ -6,7 +6,7 @@
 
 **Carrera**: Licenciatura en Sistemas de Información.
 
-**Asignatura**:Bases de Datos I.
+**Asignatura**: Bases de Datos I.
 
 **Docente**: Villegas Darío.
 
