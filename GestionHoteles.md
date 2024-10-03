@@ -47,9 +47,11 @@ Las preguntas clave a responder en el desarrollo del sistema son:
 El objetivo principal de este trabajo práctico es diseñar una base de datos relacional que permita a la cadena de hoteles gestionar sus operaciones diarias de manera eficaz, mejorando la administración y control de sus recursos. El sistema debe ser capaz de manejar de manera integral la información relevante para la operación hotelera, permitiendo un acceso rápido y seguro a los datos por parte de los usuarios autorizados.
 
 i. Objetivo General
+
 Desarrollar un modelo de base de datos relacional que permita la gestión completa de las operaciones de una cadena de hoteles, optimizando el manejo de información de reservas, habitaciones, empleados, huéspedes, y servicios adicionales.
 
 ii. Objetivos Específicos
+
 1- Definir y estructurar las entidades clave involucradas en la operación de los hoteles: huéspedes, empleados, habitaciones, reservas y servicios adicionales.
 
 2- Establecer relaciones entre las entidades de manera que la base de datos refleje las interacciones reales entre los distintos actores del sistema.
