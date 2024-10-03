@@ -1,7 +1,7 @@
 CREATE DATABASE gestionHotel_V1;
 go
 use gestionHotel_V1;
-
+go
 CREATE TABLE Tipo_habitacion
 (
   ID_TipoHabitacion INT NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE Tipo_habitacion
   CONSTRAINT PK_Tipo_habitacion PRIMARY KEY (ID_TipoHabitacion),
   CONSTRAINT CK_Tipo_habitacion_Precio_noche_tipo CHECK (Precio_noche_tipo > 0)
 );
-
+go
 CREATE TABLE Servicios_adicionales
 (
   ID_Servicio INT NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE Servicios_adicionales
   CONSTRAINT PK_Servicios PRIMARY KEY (ID_Servicio),
   CONSTRAINT CK_Servicios_adicionales_Precio_unitario CHECK (Precio_unitario > 0)
 );
-
+go
 CREATE TABLE Estado_Habitacion
 (
   ID_Estado_Habitacion INT NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE Estado_Habitacion
   Fecha_creacion DATETIME DEFAULT GETDATE() NOT NULL,
   CONSTRAINT PK_Estado_Habitacion PRIMARY KEY (ID_Estado_Habitacion)
 );
-
+go
 CREATE TABLE Turno
 (
   ID_Turno INT NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE Turno
   CONSTRAINT PK_Turno PRIMARY KEY (ID_Turno),
    CONSTRAINT CK_Turno_Horarios CHECK (Horario_fin > Horario_inicio)
 );
-
+go
 CREATE TABLE Categoria
 (
   ID_Categoria INT NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE Categoria
   CONSTRAINT PK_Categoria PRIMARY KEY (ID_Categoria),
   CONSTRAINT CK_Categoria_Nro_estrellas CHECK (Nro_estrellas > 0)
 );
-
+go
 CREATE TABLE Estado_Reserva
 (
   ID_Estado_Reserva INT NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE Estado_Reserva
   Fecha_creacion DATETIME DEFAULT GETDATE() NOT NULL,
   CONSTRAINT PK_Estado_Reserva PRIMARY KEY (ID_Estado_Reserva)
 );
-
+go
 CREATE TABLE Cargo
 (
   ID_Cargo INT NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE Cargo
   Fecha_creacion DATETIME DEFAULT GETDATE() NOT NULL,
   CONSTRAINT PK_Cargo PRIMARY KEY (ID_Cargo)
 );
-
+go
 CREATE TABLE Pais
 (
   ID_Pais INT NOT NULL,
@@ -73,7 +73,7 @@ CREATE TABLE Pais
   Fecha_creacion DATETIME DEFAULT GETDATE() NOT NULL,
   CONSTRAINT PK_Pais PRIMARY KEY (ID_Pais)
 );
-
+go
 CREATE TABLE Provincia
 (
   ID_Provincia INT NOT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE Provincia
   CONSTRAINT PK_Provincia PRIMARY KEY (ID_Provincia, ID_Pais),
   CONSTRAINT FK_Provincia_Pais FOREIGN KEY (ID_Pais) REFERENCES Pais(ID_Pais)
 );
-
+go
 CREATE TABLE Ciudades
 (
   ID_Ciudad INT NOT NULL,
@@ -94,7 +94,7 @@ CREATE TABLE Ciudades
   CONSTRAINT PK_Ciudades PRIMARY KEY (ID_Ciudad, ID_Provincia, ID_Pais),
   CONSTRAINT FK_Ciudades_Provincia FOREIGN KEY (ID_Provincia, ID_Pais) REFERENCES Provincia(ID_Provincia,ID_Pais)
 );
-
+go
 CREATE TABLE Hotel
 (
   ID_Hotel INT NOT NULL,
@@ -111,7 +111,7 @@ CREATE TABLE Hotel
   CONSTRAINT FK_Hotel_Ciudades FOREIGN KEY (ID_Ciudad, ID_Provincia, ID_Pais) REFERENCES Ciudades(ID_Ciudad, ID_Provincia, ID_Pais),
   CONSTRAINT UQ_Hotel_Email UNIQUE (Email)
 );
-
+go
 CREATE TABLE Telefono
 (
   ID_Telefono INT NOT NULL,
@@ -122,7 +122,7 @@ CREATE TABLE Telefono
   CONSTRAINT PK_Telefono PRIMARY KEY (ID_Telefono),
   CONSTRAINT FK_Telefono_Hotel FOREIGN KEY (ID_Hotel) REFERENCES Hotel(ID_Hotel)
 );
-
+go
 CREATE TABLE Habitaciones
 (
   Nro_habitacion INT NOT NULL,
@@ -140,7 +140,7 @@ CREATE TABLE Habitaciones
   CONSTRAINT CK_Habitaciones_Capacidad CHECK (Capacidad > 0),
   CONSTRAINT CK_Habitaciones_Precio_noche CHECK (Precio_noche > 0)
 );
-
+go
 CREATE TABLE Huespedes
 (
   ID_Huesped INT NOT NULL,
@@ -162,7 +162,7 @@ CREATE TABLE Huespedes
   CONSTRAINT UQ_Huespedes_Email UNIQUE (Email),
   CONSTRAINT CK_Huespedes_Edad CHECK (DATEDIFF(YEAR, fecha_nacimiento, GETDATE()) >= 18)
 );
-
+go
 CREATE TABLE Reservas
 (
   ID_Reserva INT NOT NULL,
@@ -178,7 +178,7 @@ CREATE TABLE Reservas
   CONSTRAINT CK_Reservas_FechasValidas CHECK (Fecha_checkOut > Fecha_checkIn),
   CONSTRAINT CK_Reservas_Estadia_minima CHECK (DATEDIFF(day, Fecha_checkIn, Fecha_checkOut) >= 1)
 );
-
+go
 CREATE TABLE Empleados
 (
   ID_Empleado INT NOT NULL,
@@ -201,7 +201,7 @@ CREATE TABLE Empleados
   CONSTRAINT UQ_Empleados_DNI UNIQUE (DNI),
   CONSTRAINT UQ_Empleados_Email UNIQUE (Email)
 );
-
+go
 CREATE TABLE Consumo
 (
   ID_Consumo INT NOT NULL,
@@ -218,7 +218,7 @@ CREATE TABLE Consumo
   CONSTRAINT CK_Consumo_Cantidad CHECK (Cantidad > 0),
   CONSTRAINT CK_Consumo_Total CHECK (Total > 0)
 );
-
+go
 CREATE TABLE ReservasHabitaciones
 (
   ID_Reserva INT NOT NULL,
