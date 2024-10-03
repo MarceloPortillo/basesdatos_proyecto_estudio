@@ -1,6 +1,6 @@
-CREATE DATABASE gestionHotel_V1;
+CREATE DATABASE gestion_Hotel;
 go
-use gestionHotel_V1;
+use gestion_Hotel;
 go
 CREATE TABLE Tipo_habitacion
 (
@@ -38,7 +38,10 @@ CREATE TABLE Turno
   Horario_fin TIME NOT NULL,
   Fecha_creacion DATETIME DEFAULT GETDATE() NOT NULL,
   CONSTRAINT PK_Turno PRIMARY KEY (ID_Turno),
-   CONSTRAINT CK_Turno_Horarios CHECK (Horario_fin > Horario_inicio)
+  CONSTRAINT CK_Turno_Horarios CHECK (
+  (Horario_fin > Horario_inicio) OR -- caso normal en un mismo dia
+  (Horario_inicio >= '22:00' AND Horario_fin <= '06:00') -- excepcion para el turno noche
+  )
 );
 go
 CREATE TABLE Categoria
