@@ -92,5 +92,5 @@ En este trabajo nos enfocaremos exclusivamente en la operación interna de los h
 
 ### Diccionario de datos
 
-Acceso al documento [PDF](doc/diccionario_datos.pdf) del diccionario de datos.
+Acceso al documento [PDF](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/DiccionarioDatos_GestionHotel.pdf) del diccionario de datos.
 
