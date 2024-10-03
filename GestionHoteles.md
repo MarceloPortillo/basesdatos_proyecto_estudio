@@ -31,12 +31,15 @@ El problema principal que abordaremos en este trabajo es cómo diseñar una base
 Entre los principales problemas que se busca resolver están:
 
 -La necesidad de una estructura centralizada y organizada que permita el manejo de múltiples hoteles de manera eficiente.
+
 -Cómo interrelacionar de manera efectiva entidades como empleados, huéspedes, habitaciones y servicios adicionales para brindar una visión integral de las operaciones del hotel.
+
 -Cómo manejar la información de manera que se mantenga la integridad y consistencia de los datos a lo largo de las distintas operaciones diarias.
 
 Las preguntas clave a responder en el desarrollo del sistema son:
 
 -¿Cómo organizar la información de manera que sea fácilmente accesible y manejable para cada uno de los hoteles?
+
 -¿Qué estructuras y relaciones son necesarias para reflejar fielmente las interacciones dentro de la operación de una cadena hotelera?
 
 ### Objetivo del Trabajo Práctico
