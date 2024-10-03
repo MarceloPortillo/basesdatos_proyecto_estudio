@@ -51,8 +51,11 @@ Desarrollar un modelo de base de datos relacional que permita la gestión comple
 
 ii. Objetivos Específicos
 1- Definir y estructurar las entidades clave involucradas en la operación de los hoteles: huéspedes, empleados, habitaciones, reservas y servicios adicionales.
+
 2- Establecer relaciones entre las entidades de manera que la base de datos refleje las interacciones reales entre los distintos actores del sistema.
+
 3- Garantizar que el diseño de la base de datos respete la integridad y consistencia de la información, evitando redundancias y facilitando su consulta.
+
 4- Proveer una estructura de base de datos que facilite la escalabilidad para futuros requerimientos, como la inclusión de más hoteles o nuevas funcionalidades
 
 ### Alcance del Trabajo Práctico
@@ -60,9 +63,13 @@ ii. Objetivos Específicos
 Este trabajo abarca el diseño e implementación de un sistema de base de datos relacional orientado a gestionar de manera eficiente la operación de una cadena de hoteles. Se cubren las siguientes áreas:
 
 -Gestión de reservas: Control de las reservas realizadas por los huéspedes, incluyendo el seguimiento del estado de cada una (reservada, en curso, finalizada).
+
 -Registro de huéspedes: Administración de la información personal de los huéspedes y su historial de visitas.
+
 -Administración de habitaciones: Asignación de habitaciones a las reservas, gestión de tipos de habitación, estado y disponibilidad.
+
 -Control de servicios adicionales: Registro de los servicios consumidos por los huéspedes durante su estancia (por ejemplo, spa, restaurante, etc.).
+
 -Gestión de empleados: Administración de los datos de los empleados del hotel, incluyendo su cargo, turno y asignación a un hotel específico.
 
 ### Limitaciones del Trabajo Práctico
@@ -70,7 +77,9 @@ Este trabajo abarca el diseño e implementación de un sistema de base de datos 
 En este trabajo nos enfocaremos exclusivamente en la operación interna de los hoteles, limitando su alcance en los siguientes aspectos:
 
 -No se aborda la facturación o sistema de pagos: Aunque se registran los servicios consumidos por los huéspedes, el sistema no incluye funciones para la facturación, procesamiento de pagos, o manejo de cuentas por cobrar.
+
 -No se considera la integración con sistemas externos: La base de datos está diseñada para ser un sistema independiente, por lo que no incluye mecanismos de integración con otros sistemas externos, como plataformas de reservas online o sistemas de gestión de contabilidad.
+
 -No se incluye un sistema de reportes avanzados: Aunque el sistema permite consultas básicas de la información, no se desarrollarán módulos avanzados de generación de reportes o análisis de datos.
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
