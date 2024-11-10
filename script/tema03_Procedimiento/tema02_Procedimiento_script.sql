@@ -162,11 +162,11 @@ EXEC InsertEmpleado 'Gaston', 'Morales', '32658974', '3794859674', 'San Juan 148
 'gaston.Morales@hotmail.com', '2023-06-01', 1, 2, 1;
 
 --3. Se realiza un Update de un Lote de Datos usando Procedimientos Almacenados. 
-EXEC UpdateEmpleado 5, 'Gastón', 'Morales', '32658974', '3794859674', 'San Juan 1485',
+EXEC UpdateEmpleado 3, 'Gastón', 'Morales', '32658974', '3794859674', 'San Juan 1485',
 'gaston.Morales@hotmail.com', '2023-06-01', 1, 2, 1;
 
 --4. Elimianr un empleado
-EXEC DeleteEmpleado 5;
+EXEC DeleteEmpleado 3;
 
 --==================================================================================================
 --Función para Calcular la Edad a Partir de la Fecha de Contratación:
@@ -233,5 +233,5 @@ from Empleados e
 select dbo.ObtenerNombreCompleto(e.ID_Empleado)
 from Empleados e
 
-select e.ID_Empleado, e.nombre, e.apellido, dbo.EmpleadoConAntiguedad(e.ID_Empleado,3)
+select e.ID_Empleado, e.nombre, e.apellido, dbo.EmpleadoConAntiguedad(e.ID_Empleado,4)
 from Empleados e
