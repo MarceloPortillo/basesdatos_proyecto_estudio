@@ -191,6 +191,13 @@ Los datos se obtuvieron de internet.
 
 ## Tema: Manejo de permisos a nivel de usuarios de base de datos
 
+En SQL Server, la administración de permisos es fundamental para garantizar la seguridad de los datos y la correcta gestión de accesos. Existen diferentes niveles de permisos y métodos de autenticación que permiten definir quién puede acceder y realizar operaciones en la base de datos, ya sea a nivel de servidor, base de datos o tablas específicas.
+La configuración de modos de autenticación es el primer paso para definir cómo los usuarios se autenticarán en SQL Server. Para lograr un equilibrio entre flexibilidad y seguridad, se puede optar por el modo de autenticación mixta, que admite tanto la autenticación integrada de Windows como la autenticación con usuario y contraseña de SQL Server.
+Una vez configurado el modo de autenticación, el siguiente paso es crear y gestionar logins y usuarios. Los logins son cuentas a nivel de servidor, mientras que los usuarios se crean en el contexto de una base de datos y están asociados a estos logins. Para asegurar que los usuarios tengan acceso únicamente a las operaciones necesarias, SQL Server permite asignarles roles y permisos específicos, como los de lectura, escritura y administración, tanto a nivel de tablas como a nivel de procedimientos almacenados.
+
+A continuacion se mostraran los pasos necesarios.
+
+
 ## Tema: Procedimientos y funciones almacenadas
 
 Para el desarrollo de este tema se realizaron en primer lugar 3 procedimientos, uno que realiza un insert sobre la tabla empelados de nuestra base de dados del proyecto, otro que realiza un update sobre la tabla empleados y por último uno que realiza un delete sobre la tabla emepleados. Luego se pasa a las funciones que se realizaron 3 funciones que devuelven una tabla, en la que cada una realiza una operacion sobre la tabla empleados para una determinada antiguedad, variando si se busca en un determinado año, si se busca entre un rango de fechas o si se busca discriminar por tipo de empleado. Para finalizar se realizó un procedimiento y una funcion en la que ambos reciben un mismo tipo de parámetro, un id que refiere a un empleado, y la idea a probar es que ambas devuelvan los mismos resultados y comparando la eficiencia entre ellas.
