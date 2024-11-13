@@ -206,6 +206,11 @@ En el siguiente enlace se encuentra el script sql referido a este tema
 ## Ubicación de los procedimientos y funciones dentro de la base de datos
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Ubicacion_Proce_Funciones.png)
 
+## Comparación de los planes de ejecución de una funcion y de un procedimiento que devuelven el mismo resultado
+
+### Plan de ejecución de la función FuncionCalcularEdad
+![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Ejecucion_FuncionCalcularAntiguedad.png)
+
 
 ## Tema: Optimización de consultas a través de índices
 Con el objetivo de analizar la eficiencia de los distintos índices en cuanto al tiempo de respuesta al realizar determinada consulta, seleccionamos una tabla de la base de datos realizamos un script para realizar una carga masiva de datos. Luego eliminamos la clave primaria y procedemos a crear y ejecutar cada tipo de índice, registrando el tiempo de ejecucion de cada uno de ellos. A continuación se muestra en detalle los pasos seguidos para dicha prueba.
