@@ -249,10 +249,7 @@ Acceso al documento [PDF](https://github.com/MarceloPortillo/basesdatos_proyecto
 
 ## CAPÍTULO V: CONCLUSIONES
 
-************Este capítulo permite al alumno presentar su interpretación y explicar el sentido de los
-resultados encontrados en el capítulo anterior. El alumno debe examinar los hallazgos y expresar
-su propia opinión respecto a los mismos y determinar si los objetivos del Trabajo Práctico fueron
-alcanzados.*************
+En conclusión, tanto los procedimientos como las funciones ayudan a reducir el tráfico de red y favorecen la reutilización del código, lo que contribuye a una disminución en el costo de procesamiento al ejecutar las sentencias. Sin embargo, presentan diferencias importantes, y la elección entre uno u otro depende de la necesidad específica. Aunque un procedimiento puede simular el comportamiento de una función, hacerlo suele implicar un mayor costo de ejecución. Esto se debe a la cantidad y complejidad adicional de las sentencias necesarias en un procedimiento, mientras que una función puede lograr el mismo resultado de manera más eficiente y con una estructura menos compleja.
 
 Como conclusión podemos afirmar que conviene utilizar indices agrupados cuando las consultas más comunes implican rangos de valores, ordenación por la columna del índice o uniones frecuentes en las columnas indexadas. Es ideal para tablas donde las operaciones de lectura son más frecuentes que las de escritura.
 Sin embargo en este caso es más adecuado utilizar un índice no agrupado ya que se necesita optimizar múltiples tipos de consultas en diferentes columnas, y las operaciones de escritura son frecuentes. Esto proporciona flexibilidad y puede mejorar el rendimiento de consultas específicas sin afectar significativamente las operaciones de escritura.
