@@ -203,6 +203,10 @@ En el siguiente enlace se encuentra el script sql referido a este tema
 ## Estructura de la función FuncionCalcularAntiguedad:
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Funcion_CalculaAntiguedad.png)
 
+## Ubicación de los procedimientos y funciones dentro de la base de datos
+![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Ubicacion_Proce_Funciones.png)
+
+
 ## Tema: Optimización de consultas a través de índices
 
 
