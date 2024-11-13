@@ -331,6 +331,7 @@ Con el objetivo de analizar la eficiencia de los distintos índices en cuanto al
 Acceso al documento [PDF](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/DiccionarioDatos_GestionHotel.pdf) del diccionario de datos.
 
 ## CAPÍTULO V: CONCLUSIONES
+En conclusión, el manejo de permisos y roles a nivel de usuarios en bases de datos es esencial para asegurar la seguridad y el control adecuado sobre los datos. La configuración de permisos y roles permite a los administradores de bases de datos definir qué acciones puede realizar cada usuario, ya sea desde acceder a información específica, modificarla, o ejecutar procedimientos. Esto ayuda a reducir riesgos, como accesos no autorizados y modificaciones indebidas, garantizando que solo usuarios asignados puedan realizar operaciones puntuales.
 
 En conclusión, tanto los procedimientos como las funciones ayudan a reducir el tráfico de red y favorecen la reutilización del código, lo que contribuye a una disminución en el costo de procesamiento al ejecutar las sentencias. Sin embargo, presentan diferencias importantes, y la elección entre uno u otro depende de la necesidad específica. Aunque un procedimiento puede simular el comportamiento de una función, hacerlo suele implicar un mayor costo de ejecución. Esto se debe a la cantidad y complejidad adicional de las sentencias necesarias en un procedimiento, mientras que una función puede lograr el mismo resultado de manera más eficiente y con una estructura menos compleja.
 
