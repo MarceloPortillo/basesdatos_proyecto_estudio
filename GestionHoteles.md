@@ -84,6 +84,33 @@ En este trabajo nos enfocaremos exclusivamente en la operación interna de los h
 
 -No se incluye un sistema de reportes avanzados: Aunque el sistema permite consultas básicas de la información, no se desarrollarán módulos avanzados de generación de reportes o análisis de datos.
 
+## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
+
+***********Contiene las referencias fundamentales sobre la cual se erigirá el trabajo, los fundamentos y las
+especificaciones que permitirán comprender mejor el problema planteado o bien el de marco
+conceptual por cuanto tiene el propósito de expresar un sistema coordinado y coherente de
+conceptos y proposiciones que explicaran mejor la investigación que realizamos. Se trata de
+situar a nuestro problema dentro de un conjunto de conocimientos – los más sólidos posibles -,
+de tal modo que permitan orientar nuestra búsqueda y nos ofrezcan una conceptualización
+adecuada de los términos que utilizamos. En nuestro caso: Innovaciones Tecnológicas, TICs,
+Globalización, Crecimiento, Desarrollo Regional o Local, cadenas productivas, clusters,
+desarrollo sustentable, etc.*****************
+
+## CAPÍTULO III: METODOLOGÍA SEGUIDA
+
+***********En este capítulo se presenta el plan seguido o las acciones llevadas a cabo para realizar el trabajo,
+las dificultades encontradas, y cualquier otra información que proporcione la idea de cómo se
+realizó el trabajo.
+A fin de dar una idea de la metodología seguida, se deben observar los siguientes puntos:
+a. Descripción de cómo se realizó el Trabajo Práctico.
+Descripción de los pasos seguidos para realizar el trabajo, las actividades realizadas y
+cualquier otra información que ayude a tener una idea del esfuerzo desplegado por el
+alumno para la realización del trabajo.
+b. Herramientas (Instrumentos y procedimientos)
+Descripción de los instrumentos y procedimientos utilizados para la recolección y
+tratamiento de la información. El alumno debe mencionar con qué método obtuvo los
+datos; por ej., a través de entrevistas, de revisión bibliográfica, de Internet, etc*******
+
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
 
 ### Diagrama relacional
@@ -94,3 +121,16 @@ En este trabajo nos enfocaremos exclusivamente en la operación interna de los h
 
 Acceso al documento [PDF](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/DiccionarioDatos_GestionHotel.pdf) del diccionario de datos.
 
+## CAPÍTULO V: CONCLUSIONES
+
+************Este capítulo permite al alumno presentar su interpretación y explicar el sentido de los
+resultados encontrados en el capítulo anterior. El alumno debe examinar los hallazgos y expresar
+su propia opinión respecto a los mismos y determinar si los objetivos del Trabajo Práctico fueron
+alcanzados.*************
+
+## VI. BIBLIOGRAFÍA
+
+****Bibliografía mencionada: Se deben citar de manera normalizada todos los documentos
+consultados y efectivamente utilizados para la realización del trabajo. La forma correcta de
+realizar las citas es incluyendo: autor (es), fecha de publicación, título, información acerca de la
+publicación.********
