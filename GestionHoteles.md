@@ -72,6 +72,10 @@ ii. Objetivos Específicos
 
 10- Garantizar la protección de los datos contra fallos del sistema, realizando periódicamente copias de seguridad. 
 
+11-Conocer las técnicas de backup y restore, incluyendo backup en línea.
+
+12-Implementar estrategias de respaldo para asegurar la integridad y recuperación de datos.
+
 ### Alcance del Trabajo Práctico
 
 Este trabajo abarca el diseño e implementación de un sistema de base de datos relacional orientado a gestionar de manera eficiente la operación de una cadena de hoteles. Se cubren las siguientes áreas:
