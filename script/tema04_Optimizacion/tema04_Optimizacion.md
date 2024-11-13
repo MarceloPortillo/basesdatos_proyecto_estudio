@@ -5,12 +5,14 @@ Crear un indice agrupado:
 CREATE CLUSTERED INDEX idx_fecha_checkOut ON Reservas(Fecha_checkOut);
 Borrar indice creado:
 DROP INDEX idx_fecha_checkOut ON Reservas;
+
 •	No agrupado:
 Crear un indice  no agrupado:
 CREATE NONCLUSTERED INDEX idx_fecha_checkOut_dato ON Reservas(Fecha_checkOut)
 INCLUDE (Fecha_checkIn);
 Borrar indice  no agrupado:
 DROP INDEX idx_fecha_checkOut_dato ON Reservas;
+
 •	Plan de ejecución del motor de base de datos STATICS PROFILE, STATICS TIME Y SHOWPLAN
 La sentencia SET STATISTICS TIME ON; en SQL Server permite ver los tiempos de ejecución de las consultas, tanto el tiempo de CPU como el tiempo total requerido para completar la consulta. Cuando está activada, cada vez que se ejecuta una consulta, SQL Server muestra:
 -Tiempo de CPU usado por la consulta.
