@@ -240,4 +240,5 @@ Sin embargo en este caso es más adecuado utilizar un índice no agrupado ya que
 
 Microsoft. (n.d.). Stored procedures (Database Engine). Microsoft Learn. https://learn.microsoft.com/es-es/sql/relational-databases/stored-procedures/stored-procedures-database-engine?view=sql-server-ver16
 
+Axial SQL. https://axial-sql.com/es/comprendiendo-los-indices-agrupados-y-no-agrupados-en-sql-server/
 
