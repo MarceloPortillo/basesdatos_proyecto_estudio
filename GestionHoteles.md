@@ -164,13 +164,17 @@ Ambos tipos de índices tienen sus ventajas y sus desventajas, se pueden crear m
 ### TEMA 4: Backup y restore. Backup en línea
 
 Un backup es una copia de seguridad de una base de datos o archivos que se realiza para proteger los datos frente a posibles pérdidas, fallos del sistema o corrupción. El objetivo de un backup es permitir la recuperación de la información en caso de un evento adverso.
+
 La restauración (o restore) es el proceso de utilizar un backup previamente realizado para recuperar una base de datos o sistema a un estado anterior. Se emplea cuando ocurre una pérdida de datos o un fallo que requiere volver a una versión segura y funcional de la base de datos.
+
 El backup en línea es un tipo de backup que se realiza mientras la base de datos está en funcionamiento y accesible para los usuarios. En el modo de recuperación FULL o BULK_LOGGED, permite realizar copias de seguridad sin interrumpir las operaciones de la base de datos, proporcionando continuidad operativa.
+
 El log de transacciones es un registro detallado de todas las transacciones y cambios realizados en la base de datos. Permite la recuperación a un punto específico en el tiempo (restauración de un punto de recuperación) y es esencial para el proceso de restauración de datos incrementales. Este archivo de log captura cada operación y es clave para aplicar restauraciones de forma progresiva, asegurando que todos los cambios se implementen hasta un momento específico.
 
 Efectividad de los backups (completos y de logs):
 
 Backup completo: Es una copia completa de la base de datos, esencial para restaurar el estado inicial antes de aplicar otros backups incrementales o de logs. El script demuestra la capacidad de realizar un backup completo de la base de datos gestion_Hotel, asegurando la integridad de los datos hasta ese punto.
+
 Backup de logs de transacciones: Permite capturar los cambios que ocurren después de un backup completo. La efectividad de este tipo de backup radica en su capacidad para registrar los cambios de la base de datos y permitir la recuperación granular en un punto específico. En este ejercicio, los backups de logs (gestion_Hotel_log1.trn y gestion_Hotel_log2.trn) se implementaron de manera efectiva para capturar los cambios antes y después de las inserciones.
 
 Recuperación de la base de datos a puntos específicos en el tiempo:
@@ -182,6 +186,7 @@ El uso de la opción WITH NORECOVERY en las restauraciones de logs permitió man
 Verificación de los registros en los momentos restaurados:
 
 Después del primer log: La base de datos mostró 13 registros, lo que confirma que los 10 primeros inserts se aplicaron correctamente tras restaurar el primer archivo de log.
+
 Después del segundo log: La base de datos restaurada con ambos logs mostró los 23 registros, corroborando que los cambios de ambos backups de logs se aplicaron correctamente y que los datos restaurados coincidían con las operaciones de inserción documentadas.
 
 Observación clave:
