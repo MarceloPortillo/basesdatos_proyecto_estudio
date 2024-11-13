@@ -331,6 +331,7 @@ Con el objetivo de analizar la eficiencia de los distintos índices en cuanto al
 
 ## Tema 4: Backup y restore. Backup en línea
 
+Con el objetivo de conocer las técnicas de backup y restore, incluyendo backup en línea, y de implementar estrategias de respaldo para asegurar la integridad y recuperación de datos, se describe a continuación los resultados logrados con la implementación:
 
 
 
