@@ -154,14 +154,14 @@ Instrucciones :una función solo permite una instrucción SELECT, mientras que u
 Transacciones: un procedimiento almacenado puede administrar transacciones, pero una función no.
 Uso en declaraciones SELECT: una función se puede incrustar en una declaración SELECT, pero un procedimiento almacenado no.
 
-## TEMA 3: Optimización de consultas a través de índices
+### TEMA 3: Optimización de consultas a través de índices
 
 Un índice es una estructura en disco asociada con una tabla o vista que acelera la recuperación de filas de la tabla o vista. Un índice contiene claves construidas a partir de una o más columnas en la tabla o vista. Estas claves se almacenan en una estructura (B-árbol) que permite a SQL Server encontrar la fila o filas asociadas con los valores de clave de forma rápida y eficiente. Cuando se ejecuta esta consulta, el optimizador de consultas evalúa cada método disponible para recuperar los datos y selecciona el método más eficiente. El método puede ser un escaneo de tabla, o puede estar escaneando uno o más índices si existen.
 Existen dos tipos de índices, los agrupados y los no agrupados. Los primeros ordenan y almacenan las filas de datos en la tabla o vista en función de sus valores clave. Estos valores clave son las columnas incluidas en la definición de índice. Solo puede haber un índice agrupado por tabla, porque las filas de datos en sí mismas se pueden almacenar en un solo orden. La única vez que las filas de datos en una tabla se almacenan en orden ordenado es cuando la tabla contiene un índice agrupado. Cuando una tabla tiene un índice agrupado, la tabla se denomina tabla agrupada. Este tipo de índice se asemeja a las conocidas guías telefónicas.
 En el caso de los segundo, los índices no agrupados, tienen una estructura separada de las filas de datos. Un índice no agrupado contiene los valores de clave de índice no agrupados y cada entrada de valor de clave tiene un puntero a la fila de datos que contiene el valor de clave. El puntero de una fila de índice en un índice no agrupado a una fila de datos se denomina localizador de filas. La estructura del localizador de filas depende de si las páginas de datos se almacenan en un montón o en una tabla agrupada. Para un montón, un localizador de filas es un puntero a la fila. Para una tabla agrupada, el localizador de filas es la clave de índice agrupada. Este tipo de índice se asemeja al de un libro, por contener en sus hojas los punteros a las posiciones de memoria donde se almacena la información.
 Ambos tipos de índices tienen sus ventajas y sus desventajas, se pueden crear múltiples índices no agrupados sobre una tabla, lo que puede acelerar consultas que no se benefician del índice agrupado. Sin embargo  cada vez que se inserta, actualiza o elimina una fila, los índices no agrupados también deben actualizarse, lo que puede afectar el rendimiento de las operaciones de escritura.
 
-## TEMA 4: Backup y restore. Backup en línea
+### TEMA 4: Backup y restore. Backup en línea
 
 Un backup es una copia de seguridad de una base de datos o archivos que se realiza para proteger los datos frente a posibles pérdidas, fallos del sistema o corrupción. El objetivo de un backup es permitir la recuperación de la información en caso de un evento adverso.
 La restauración (o restore) es el proceso de utilizar un backup previamente realizado para recuperar una base de datos o sistema a un estado anterior. Se emplea cuando ocurre una pérdida de datos o un fallo que requiere volver a una versión segura y funcional de la base de datos.
@@ -202,7 +202,7 @@ Los datos se obtuvieron de internet.
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
 
-## Tema 1: Manejo de permisos a nivel de usuarios de base de datos
+### Tema 1: Manejo de permisos a nivel de usuarios de base de datos
 
 En SQL Server, la administración de permisos es fundamental para garantizar la seguridad de los datos y la correcta gestión de accesos. Existen diferentes niveles de permisos y métodos de autenticación que permiten definir quién puede acceder y realizar operaciones en la base de datos, ya sea a nivel de servidor, base de datos o tablas específicas.
 La configuración de modos de autenticación es el primer paso para definir cómo los usuarios se autenticarán en SQL Server. Para lograr un equilibrio entre flexibilidad y seguridad, se puede optar por el modo de autenticación mixta, que admite tanto la autenticación integrada de Windows como la autenticación con usuario y contraseña de SQL Server.
@@ -282,7 +282,7 @@ El rol se ejecuta correctamente.
 
 Mientras que el otro usuario creado, al no tener permisos asignados, solo podrá conectarse a la base de datos, pero no podrá realizar ninguna operación útil.
 
-## Tema 2: Procedimientos y funciones almacenadas
+### Tema 2: Procedimientos y funciones almacenadas
 
 Para el desarrollo de este tema se realizaron en primer lugar 3 procedimientos, uno que realiza un insert sobre la tabla empelados de nuestra base de dados del proyecto, otro que realiza un update sobre la tabla empleados y por último uno que realiza un delete sobre la tabla emepleados. Luego se pasa a las funciones que se realizaron 3 funciones que devuelven una tabla, en la que cada una realiza una operacion sobre la tabla empleados para una determinada antiguedad, variando si se busca en un determinado año, si se busca entre un rango de fechas o si se busca discriminar por tipo de empleado. Para finalizar se realizó un procedimiento y una funcion en la que ambos reciben un mismo tipo de parámetro, un id que refiere a un empleado, y la idea a probar es que ambas devuelvan los mismos resultados y comparando la eficiencia entre ellas.
 
@@ -320,7 +320,7 @@ from Empleados e
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/ComparacionQuery.png)
 
 
-## Tema 3: Optimización de consultas a través de índices
+### Tema 3: Optimización de consultas a través de índices
 
 Con el objetivo de analizar la eficiencia de los distintos índices en cuanto al tiempo de respuesta al realizar determinada consulta, seleccionamos una tabla de la base de datos realizamos un script para realizar una carga masiva de datos. Luego eliminamos la clave primaria y procedemos a crear y ejecutar cada tipo de índice, registrando el tiempo de ejecucion de cada uno de ellos. A continuación se muestra en detalle los pasos seguidos para dicha prueba.
 
@@ -329,7 +329,7 @@ Con el objetivo de analizar la eficiencia de los distintos índices en cuanto al
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/BorrarIndiceAgrupado.png)
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/IndiceNoAgrupado.png)
 
-## Tema 4: Backup y restore. Backup en línea
+### Tema 4: Backup y restore. Backup en línea
 
 Con el objetivo de conocer las técnicas de backup y restore, incluyendo backup en línea, y de implementar estrategias de respaldo para asegurar la integridad y recuperación de datos, se describe a continuación los resultados logrados con la implementación:
 
