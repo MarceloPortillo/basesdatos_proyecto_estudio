@@ -214,6 +214,20 @@ En el siguiente enlace se encuentra el script sql referido a este tema
 ## Plan de ejecución del procedimiento CalcularAntiguedadDelConBucle:
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/CalcularEdadConBucle.png)
 
+### Resultado de ambas querys
+
+Querys
+-Procedimiento
+
+EXEC VerificarAntiguedadEmpleados @Anos = 2;
+
+-Funcion
+
+select e.ID_Empleado, e.nombre, e.apellido, dbo.EmpleadoConAntiguedad(e.ID_Empleado,2)
+from Empleados e
+
+![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/ComparacionQuery.png)
+
 
 ## Tema: Optimización de consultas a través de índices
 Con el objetivo de analizar la eficiencia de los distintos índices en cuanto al tiempo de respuesta al realizar determinada consulta, seleccionamos una tabla de la base de datos realizamos un script para realizar una carga masiva de datos. Luego eliminamos la clave primaria y procedemos a crear y ejecutar cada tipo de índice, registrando el tiempo de ejecucion de cada uno de ellos. A continuación se muestra en detalle los pasos seguidos para dicha prueba.
