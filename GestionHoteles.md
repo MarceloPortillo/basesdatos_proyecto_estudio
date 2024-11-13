@@ -72,9 +72,9 @@ ii. Objetivos Específicos
 
 10- Garantizar la protección de los datos contra fallos del sistema, realizando periódicamente copias de seguridad. 
 
-11-Conocer las técnicas de backup y restore, incluyendo backup en línea.
+11- Conocer las técnicas de backup y restore, incluyendo backup en línea.
 
-12-Implementar estrategias de respaldo para asegurar la integridad y recuperación de datos.
+12- Implementar estrategias de respaldo para asegurar la integridad y recuperación de datos.
 
 ### Alcance del Trabajo Práctico
 
@@ -118,69 +118,78 @@ Las restricciones de permisos, como limitar a read_user a solo lectura y ejecuci
 Roles en la Base de Datos:
 La creación de los roles que agrupan permisos específicos es una práctica efectiva para gestionar accesos. Al asignar estos roles a los usuarios adecuados, se puede controlar de manera eficiente quién puede hacer qué dentro de la base de datos.
 
+### TEMA 2 Procedimientos y Funciones almacenadas
 
-### TEMA 2 Procedimientos y Funciones
-
-Procedimientos Un procedimiento almacenado es un grupo de una o varias instrucciones, en nuestro caso Transact-SQL para SQL server, que se ejecutan secuencialmente algunas de sus caracteristicas son:
-Aceptan parámetros de entrada y pueden devolver varios valores en forma de parámetros de salida al programa que realiza la llamada.
-
-Contener instrucciones de programación que realicen operaciones en la base de datos, como también pueden contener llamadas a otros procedimientos.
-
-Devolver un valor de estado a un programa que realiza una llamada para indicar si la operación se ha realizado correctamente o se han producido errores, y el motivo de estos.
+Un procedimiento almacenado es un grupo de una o varias instrucciones, en nuestro caso Transact-SQL para SQL server, que se ejecutan secuencialmente algunas de sus caracteristicas son:
+-Aceptan parámetros de entrada y pueden devolver varios valores en forma de parámetros de salida al programa que realiza la llamada.
+-Contener instrucciones de programación que realicen operaciones en la base de datos, como también pueden contener llamadas a otros procedimientos.
+-Devolver un valor de estado a un programa que realiza una llamada para indicar si la operación se ha realizado correctamente o se han producido errores, y el motivo de estos.
 
 Ventajas de usar procedimientos almacenados
 
-Tráfico de red reducido entre el cliente y el servidor: los comandos de un procedimiento se ejecutan en un único lote de código. Esto puede reducir significativamente el tráfico de red entre el servidor y el cliente porque únicamente se envía a través de la red la llamada que va a ejecutar el procedimiento.
-
-Mayor seguridad: varios usuarios y programas cliente pueden realizar operaciones en los objetos de base de datos subyacentes a través de un procedimiento, aunque los usuarios y los programas no tengan permisos directos sobre esos objetos subyacentes. El procedimiento controla qué procesos y actividades se llevan a cabo y protege los objetos de base de datos subyacentes. Esto elimina la necesidad de conceder permisos en cada nivel de objetos y simplifica los niveles de seguridad.
-
-Reutilización del código: el código de cualquier operación de base de datos redundante resulta un candidato perfecto para la encapsulación de procedimientos. De este modo, se elimina la necesidad de escribir de nuevo el mismo código, se reducen las inconsistencias de código y se permite que cualquier usuario o aplicación que cuente con los permisos necesarios pueda acceder al código y ejecutarlo.
-
-Mantenimiento más sencillo: cuando las aplicaciones cliente llaman a procedimientos y mantienen las operaciones de base de datos en la capa de datos, solo deben actualizarse los cambios de los procesos en la base de datos subyacente.
-
-Rendimiento mejorado: de forma predeterminada, un procedimiento se compila la primera vez que se ejecuta y crea un plan de ejecución que vuelve a usarse en posteriores ejecuciones. Como el procesador de consultas no tiene que crear un nuevo plan, normalmente necesita menos tiempo para procesar el procedimiento.
-
-Funciones Al igual que las funciones de los lenguajes de programación, las funciones definidas por el usuario de SQL Server son rutinas que aceptan parámetros, realizan una acción y devuelven el resultado de esa acción como un valor. El valor devuelto puede ser un valor escalar único o un conjunto de resultados.
+-Tráfico de red reducido entre el cliente y el servidor: los comandos de un procedimiento se ejecutan en un único lote de código. Esto puede reducir significativamente el tráfico de red entre el servidor y el cliente porque únicamente se envía a través de la red la llamada que va a ejecutar el procedimiento.
+-Mayor seguridad: varios usuarios y programas cliente pueden realizar operaciones en los objetos de base de datos subyacentes a través de un procedimiento, aunque los usuarios y los programas no tengan permisos directos sobre esos objetos subyacentes. El procedimiento controla qué procesos y actividades se llevan a cabo y protege los objetos de base de datos subyacentes. Esto elimina la necesidad de conceder permisos en cada nivel de objetos y simplifica los niveles de seguridad.
+-Reutilización del código: el código de cualquier operación de base de datos redundante resulta un candidato perfecto para la encapsulación de procedimientos. De este modo, se elimina la necesidad de escribir de nuevo el mismo código, se reducen las inconsistencias de código y se permite que cualquier usuario o aplicación que cuente con los permisos necesarios pueda acceder al código y ejecutarlo.
+-Mantenimiento más sencillo: cuando las aplicaciones cliente llaman a procedimientos y mantienen las operaciones de base de datos en la capa de datos, solo deben actualizarse los cambios de los procesos en la base de datos subyacente.
+-Rendimiento mejorado: de forma predeterminada, un procedimiento se compila la primera vez que se ejecuta y crea un plan de ejecución que vuelve a usarse en posteriores ejecuciones. Como el procesador de consultas no tiene que crear un nuevo plan, normalmente necesita menos tiempo para procesar el procedimiento.
+-Funciones Al igual que las funciones de los lenguajes de programación, las funciones definidas por el usuario de SQL Server son rutinas que aceptan parámetros, realizan una acción y devuelven el resultado de esa acción como un valor. El valor devuelto puede ser un valor escalar único o un conjunto de resultados.
 Ventajas de las funciones definidas por el usuario
-
-Programación modular: puede crear la función una vez, almacenarla en la base de datos y llamarla desde el programa tantas veces como desee.
-
-Ejecución más rápida: com pasa con los procedimientos almacenados, las funciones definidas por el usuario de Transact-SQL reducen el costo de compilación del código de Transact-SQL almacenando los planes en la caché y reutilizándolos para ejecuciones repetidas.
-
-Reducción del tráfico de red: una operación que filtra datos basándose en restricciones complejas que no se puede expresar en una sola expresión escalar se puede expresar como una función.
+-Programación modular: puede crear la función una vez, almacenarla en la base de datos y llamarla desde el programa tantas veces como desee.
+-Ejecución más rápida: com pasa con los procedimientos almacenados, las funciones definidas por el usuario de Transact-SQL reducen el costo de compilación del código de Transact-SQL almacenando los planes en la caché y reutilizándolos para ejecuciones repetidas.
+-Reducción del tráfico de red: una operación que filtra datos basándose en restricciones complejas que no se puede expresar en una sola expresión escalar se puede expresar como una función.
 
 Tipos de funciones
 
-Funciones escalares : las funciones escalares definidas por el usuario devuelven un único valor de datos del tipo definido en la cláusula RETURNS. El tipo devuelto puede ser de cualquier tipo de datos excepto text, ntext, image, cursory timestamp.
-
-Funciones con valores de tabla: las funciones con valores de tabla definidas por el usuario devuelven un tipo de datos table. La tabla es el conjunto de resultados de una sola instrucción SELECT.
-
-Funciones del sistema : SQL Server proporciona numerosas funciones del sistema que se pueden usar para realizar diversas operaciones, estas no se pueden modificar.
-
-Funciones deterministas y no deterministas: las funciones deterministas siempre devuelven el mismo resultado cada vez que se llama con un conjunto específico de valores de entrada y tienen el mismo estado de la base de datos. Las funciones no deterministas pueden devolver resultados diferentes cada vez que se les llama con un conjunto específico de valores de entrada, incluso si el estado de la base de datos al que acceden sigue siendo el mismo.
+-Funciones escalares : las funciones escalares definidas por el usuario devuelven un único valor de datos del tipo definido en la cláusula RETURNS. El tipo devuelto puede ser de cualquier tipo de datos excepto text, ntext, image, cursory timestamp.
+-Funciones con valores de tabla: las funciones con valores de tabla definidas por el usuario devuelven un tipo de datos table. La tabla es el conjunto de resultados de una sola instrucción SELECT.
+-Funciones del sistema : SQL Server proporciona numerosas funciones del sistema que se pueden usar para realizar diversas operaciones, estas no se pueden modificar.
+-Funciones deterministas y no deterministas: las funciones deterministas siempre devuelven el mismo resultado cada vez que se llama con un conjunto específico de valores de entrada y tienen el mismo estado de la base de datos. Las funciones no deterministas pueden devolver resultados diferentes cada vez que se les llama con un conjunto específico de valores de entrada, incluso si el estado de la base de datos al que acceden sigue siendo el mismo.
 
 Diferencias entre procedimientos y funciones
 
 Tipo de retorno: una función siempre devuelve un valor, mientras que un procedimiento almacenado no es obligatorio que lo haga.
-
 Parámetros: un procedimiento almacenado puede tener parámetros de entrada y salida, mientras que una función no puede tener parámetros de salida.
-
 Llamadas: una función se puede llamar desde un procedimiento almacenado, pero no al revés.
-
 Instrucciones :una función solo permite una instrucción SELECT, mientras que un procedimiento almacenado permite SELECT, INSERT, UPDATE y DELETE.
-
 Transacciones: un procedimiento almacenado puede administrar transacciones, pero una función no.
-
 Uso en declaraciones SELECT: una función se puede incrustar en una declaración SELECT, pero un procedimiento almacenado no.
 
-## Tema: Optimización de consultas a través de índices
+## TEMA 3: Optimización de consultas a través de índices
+
 Un índice es una estructura en disco asociada con una tabla o vista que acelera la recuperación de filas de la tabla o vista. Un índice contiene claves construidas a partir de una o más columnas en la tabla o vista. Estas claves se almacenan en una estructura (B-árbol) que permite a SQL Server encontrar la fila o filas asociadas con los valores de clave de forma rápida y eficiente. Cuando se ejecuta esta consulta, el optimizador de consultas evalúa cada método disponible para recuperar los datos y selecciona el método más eficiente. El método puede ser un escaneo de tabla, o puede estar escaneando uno o más índices si existen.
 Existen dos tipos de índices, los agrupados y los no agrupados. Los primeros ordenan y almacenan las filas de datos en la tabla o vista en función de sus valores clave. Estos valores clave son las columnas incluidas en la definición de índice. Solo puede haber un índice agrupado por tabla, porque las filas de datos en sí mismas se pueden almacenar en un solo orden. La única vez que las filas de datos en una tabla se almacenan en orden ordenado es cuando la tabla contiene un índice agrupado. Cuando una tabla tiene un índice agrupado, la tabla se denomina tabla agrupada. Este tipo de índice se asemeja a las conocidas guías telefónicas.
 En el caso de los segundo, los índices no agrupados, tienen una estructura separada de las filas de datos. Un índice no agrupado contiene los valores de clave de índice no agrupados y cada entrada de valor de clave tiene un puntero a la fila de datos que contiene el valor de clave. El puntero de una fila de índice en un índice no agrupado a una fila de datos se denomina localizador de filas. La estructura del localizador de filas depende de si las páginas de datos se almacenan en un montón o en una tabla agrupada. Para un montón, un localizador de filas es un puntero a la fila. Para una tabla agrupada, el localizador de filas es la clave de índice agrupada. Este tipo de índice se asemeja al de un libro, por contener en sus hojas los punteros a las posiciones de memoria donde se almacena la información.
 Ambos tipos de índices tienen sus ventajas y sus desventajas, se pueden crear múltiples índices no agrupados sobre una tabla, lo que puede acelerar consultas que no se benefician del índice agrupado. Sin embargo  cada vez que se inserta, actualiza o elimina una fila, los índices no agrupados también deben actualizarse, lo que puede afectar el rendimiento de las operaciones de escritura.
 
+## TEMA 4: Backup y restore. Backup en línea
+
+Un backup es una copia de seguridad de una base de datos o archivos que se realiza para proteger los datos frente a posibles pérdidas, fallos del sistema o corrupción. El objetivo de un backup es permitir la recuperación de la información en caso de un evento adverso.
+La restauración (o restore) es el proceso de utilizar un backup previamente realizado para recuperar una base de datos o sistema a un estado anterior. Se emplea cuando ocurre una pérdida de datos o un fallo que requiere volver a una versión segura y funcional de la base de datos.
+El backup en línea es un tipo de backup que se realiza mientras la base de datos está en funcionamiento y accesible para los usuarios. En el modo de recuperación FULL o BULK_LOGGED, permite realizar copias de seguridad sin interrumpir las operaciones de la base de datos, proporcionando continuidad operativa.
+El log de transacciones es un registro detallado de todas las transacciones y cambios realizados en la base de datos. Permite la recuperación a un punto específico en el tiempo (restauración de un punto de recuperación) y es esencial para el proceso de restauración de datos incrementales. Este archivo de log captura cada operación y es clave para aplicar restauraciones de forma progresiva, asegurando que todos los cambios se implementen hasta un momento específico.
+
+Efectividad de los backups (completos y de logs):
+
+Backup completo: Es una copia completa de la base de datos, esencial para restaurar el estado inicial antes de aplicar otros backups incrementales o de logs. El script demuestra la capacidad de realizar un backup completo de la base de datos gestion_Hotel, asegurando la integridad de los datos hasta ese punto.
+Backup de logs de transacciones: Permite capturar los cambios que ocurren después de un backup completo. La efectividad de este tipo de backup radica en su capacidad para registrar los cambios de la base de datos y permitir la recuperación granular en un punto específico. En este ejercicio, los backups de logs (gestion_Hotel_log1.trn y gestion_Hotel_log2.trn) se implementaron de manera efectiva para capturar los cambios antes y después de las inserciones.
+
+Recuperación de la base de datos a puntos específicos en el tiempo:
+
+La restauración de la base de datos se realizó primero en el estado del backup completo seguido de la aplicación del primer archivo de log (gestion_Hotel_log1.trn), lo que permitió recuperar la base de datos al estado después de los primeros 10 registros insertados.
+Para restaurar hasta después de todos los cambios, se aplicaron ambos backups de logs (gestion_Hotel_log1.trn y gestion_Hotel_log2.trn), recuperando así los 23 registros.
+El uso de la opción WITH NORECOVERY en las restauraciones de logs permitió mantener la base de datos en estado de restauración hasta que se aplicó el último log con WITH RECOVERY, asegurando la consistencia de la recuperación de datos.
+
+Verificación de los registros en los momentos restaurados:
+
+Después del primer log: La base de datos mostró 13 registros, lo que confirma que los 10 primeros inserts se aplicaron correctamente tras restaurar el primer archivo de log.
+Después del segundo log: La base de datos restaurada con ambos logs mostró los 23 registros, corroborando que los cambios de ambos backups de logs se aplicaron correctamente y que los datos restaurados coincidían con las operaciones de inserción documentadas.
+
+Observación clave:
+Modelo de recuperación: Configurar la base de datos en modo de recuperación FULL es esencial para permitir la captura de logs de transacciones y asegurar la capacidad de restaurar a puntos específicos.
+
 ## CAPÍTULO III: METODOLOGÍA SEGUIDA
-El proyecto lo llevamos a cabo mediante la búsqueda individual de información respecto al tema asignado a cada miembro del grupo. Realizamos el diagrama de relación-entidad y nos dividimos en partes equitativa la investigación acerca de las diferentes técnicas de trabajo (Manejo de Permisos a Nivel de Usuarios, Procedimientos y funciones almacenadas, Back Up y Restore, optimización de consultas) y el desarrollo de las mismas. Fuimos proponiendo distintas fechas de reuniones para ir compartiendo lo desarrollado y acoplando las distintas partes del proyecto, eso lo hicimos de manera virtual para tener una mejor visión del código y la búsqueda de información. El informe lo realizamos entre todos ya que fuimos aportando ideas y uniendo lo investigado, así como la carga de datos ya que contiene muchas claves foráneas y se hacía imposible ir viendo los errores ya que algunas tablas dependen de otras.
+
+El proyecto lo llevamos a cabo mediante la búsqueda individual de información respecto al tema asignado a cada miembro del grupo. Realizamos el diagrama de relación-entidad y nos dividimos en partes equitativa la investigación acerca de las diferentes técnicas de trabajo (Manejo de Permisos a Nivel de Usuarios, Procedimientos y funciones almacenadas, BackUp y Restore, optimización de consultas) y el desarrollo de las mismas. Fuimos proponiendo distintas fechas de reuniones para ir compartiendo lo desarrollado y acoplando las distintas partes del proyecto, eso lo hicimos de manera virtual para tener una mejor visión del código y la búsqueda de información. El informe lo realizamos entre todos ya que fuimos aportando ideas y uniendo lo investigado, así como la carga de datos ya que contiene muchas claves foráneas y se hacía imposible ir viendo los errores ya que algunas tablas dependen de otras.
 
 Herramientas Utilizadas
 
@@ -188,7 +197,7 @@ SQL Server.
 SQL Server Management Studio (SSMS): Ofrece interfaces gráficas para la gestión de permisos y roles en bases de datos
 WhatsApp: Fue unos de los medios más utilizado para ir coordinando las reuniones, respondiendo consultas, y pasar información no solo del proyecto si no de la materia en sí.
 Meet: Fue el medio que utilizamos para llevar a cabo algunas reuniones virtuales e ir compartiendo el proceso en la creación del proyecto ya que es una plataforma gratuita y que no requiere una conexión a internet muy buena.
-GitHub: fue la última herramienta en incorporar, porque fue donde cargamos los códigos para compartirnos y dimos permisos de colaborador a los profesores que desarrollan la materia.
+GitHub: fue la herramienta clave ya que permite tener un registro del trabajo y que todos tengamos acceso al mismo codigo para compartirnos tambien dimos permisos de colaborador a los profesores que desarrollan la materia.
 Los datos se obtuvieron de internet.
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
@@ -273,7 +282,6 @@ El rol se ejecuta correctamente.
 
 Mientras que el otro usuario creado, al no tener permisos asignados, solo podrá conectarse a la base de datos, pero no podrá realizar ninguna operación útil.
 
-
 ## Tema: Procedimientos y funciones almacenadas
 
 Para el desarrollo de este tema se realizaron en primer lugar 3 procedimientos, uno que realiza un insert sobre la tabla empelados de nuestra base de dados del proyecto, otro que realiza un update sobre la tabla empleados y por último uno que realiza un delete sobre la tabla emepleados. Luego se pasa a las funciones que se realizaron 3 funciones que devuelven una tabla, en la que cada una realiza una operacion sobre la tabla empleados para una determinada antiguedad, variando si se busca en un determinado año, si se busca entre un rango de fechas o si se busca discriminar por tipo de empleado. Para finalizar se realizó un procedimiento y una funcion en la que ambos reciben un mismo tipo de parámetro, un id que refiere a un empleado, y la idea a probar es que ambas devuelvan los mismos resultados y comparando la eficiencia entre ellas.
@@ -313,6 +321,7 @@ from Empleados e
 
 
 ## Tema: Optimización de consultas a través de índices
+
 Con el objetivo de analizar la eficiencia de los distintos índices en cuanto al tiempo de respuesta al realizar determinada consulta, seleccionamos una tabla de la base de datos realizamos un script para realizar una carga masiva de datos. Luego eliminamos la clave primaria y procedemos a crear y ejecutar cada tipo de índice, registrando el tiempo de ejecucion de cada uno de ellos. A continuación se muestra en detalle los pasos seguidos para dicha prueba.
 
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/crearIndiceAgrupado.png)
@@ -321,6 +330,10 @@ Con el objetivo de analizar la eficiencia de los distintos índices en cuanto al
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/IndiceNoAgrupado.png)
 
 ## Tema: Backup y restore. Backup en línea
+
+
+
+
 
 ### Diagrama relacional
 ![diagrama_relacional](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/diagramaRelacional.png)
@@ -331,17 +344,20 @@ Con el objetivo de analizar la eficiencia de los distintos índices en cuanto al
 Acceso al documento [PDF](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/DiccionarioDatos_GestionHotel.pdf) del diccionario de datos.
 
 ## CAPÍTULO V: CONCLUSIONES
+
 En conclusión, el manejo de permisos y roles a nivel de usuarios en bases de datos es esencial para asegurar la seguridad y el control adecuado sobre los datos. La configuración de permisos y roles permite a los administradores de bases de datos definir qué acciones puede realizar cada usuario, ya sea desde acceder a información específica, modificarla, o ejecutar procedimientos. Esto ayuda a reducir riesgos, como accesos no autorizados y modificaciones indebidas, garantizando que solo usuarios asignados puedan realizar operaciones puntuales.
 
-En conclusión, tanto los procedimientos como las funciones ayudan a reducir el tráfico de red y favorecen la reutilización del código, lo que contribuye a una disminución en el costo de procesamiento al ejecutar las sentencias. Sin embargo, presentan diferencias importantes, y la elección entre uno u otro depende de la necesidad específica. Aunque un procedimiento puede simular el comportamiento de una función, hacerlo suele implicar un mayor costo de ejecución. Esto se debe a la cantidad y complejidad adicional de las sentencias necesarias en un procedimiento, mientras que una función puede lograr el mismo resultado de manera más eficiente y con una estructura menos compleja.
+Además, tanto los procedimientos como las funciones ayudan a reducir el tráfico de red y favorecen la reutilización del código, lo que contribuye a una disminución en el costo de procesamiento al ejecutar las sentencias. Sin embargo, presentan diferencias importantes, y la elección entre uno u otro depende de la necesidad específica. Aunque un procedimiento puede simular el comportamiento de una función, hacerlo suele implicar un mayor costo de ejecución. Esto se debe a la cantidad y complejidad adicional de las sentencias necesarias en un procedimiento, mientras que una función puede lograr el mismo resultado de manera más eficiente y con una estructura menos compleja.
 
-Como conclusión podemos afirmar que conviene utilizar indices agrupados cuando las consultas más comunes implican rangos de valores, ordenación por la columna del índice o uniones frecuentes en las columnas indexadas. Es ideal para tablas donde las operaciones de lectura son más frecuentes que las de escritura.
+En cuanto a la optimización de consultas a través de índices podemos afirmar que conviene utilizar indices agrupados cuando las consultas más comunes implican rangos de valores, ordenación por la columna del índice o uniones frecuentes en las columnas indexadas. Es ideal para tablas donde las operaciones de lectura son más frecuentes que las de escritura.
 Sin embargo en este caso es más adecuado utilizar un índice no agrupado ya que se necesita optimizar múltiples tipos de consultas en diferentes columnas, y las operaciones de escritura son frecuentes. Esto proporciona flexibilidad y puede mejorar el rendimiento de consultas específicas sin afectar significativamente las operaciones de escritura.
+
+A lo que refiere backup y restore, los procedimientos implementados en este trabajo demuestran una estrategia sólida para proteger la integridad de los datos y permitir la recuperación a puntos específicos en el tiempo, lo cual es crucial para escenarios de recuperación ante fallos y auditorías.
 
 ## VI. BIBLIOGRAFÍA
 
+Microsoft. (2024). SQL Server Documentation. https://learn.microsoft.com/es-es/sql/relational-databases/backup-restore/quickstart-backup-restore-database?view=sql-server-ver16&tabs=ssms
 
 Microsoft. (n.d.). Stored procedures (Database Engine). Microsoft Learn. https://learn.microsoft.com/es-es/sql/relational-databases/stored-procedures/stored-procedures-database-engine?view=sql-server-ver16
 
 Axial SQL. https://axial-sql.com/es/comprendiendo-los-indices-agrupados-y-no-agrupados-en-sql-server/
-
