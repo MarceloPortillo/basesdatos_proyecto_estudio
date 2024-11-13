@@ -102,7 +102,7 @@ En este trabajo nos enfocaremos exclusivamente en la operación interna de los h
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
-### TEMA 1 Manejo de permisos a nivel de usuarios de base de datos
+### TEMA 1: Manejo de permisos a nivel de usuarios de base de datos
 
 El manejo de permisos en bases de datos tiene un papel muy importante en cuanto se habla a proteger la integridad y confidencialidad de los datos. Con la administración de los permisos a nivel de usuarios y roles, se logra una flexibilidad y un control efectivo sobre las acciones que cada usuario puede realizar, reduciendo   los riesgos de acceso no autorizado. Esto incluye desde la asignación de permisos de ejecución específicos hasta la creación de roles que simplifican la gestión de accesos y responsabilidades.
 
@@ -118,7 +118,7 @@ Las restricciones de permisos, como limitar a read_user a solo lectura y ejecuci
 Roles en la Base de Datos:
 La creación de los roles que agrupan permisos específicos es una práctica efectiva para gestionar accesos. Al asignar estos roles a los usuarios adecuados, se puede controlar de manera eficiente quién puede hacer qué dentro de la base de datos.
 
-### TEMA 2 Procedimientos y Funciones almacenadas
+### TEMA 2: Procedimientos y Funciones almacenadas
 
 Un procedimiento almacenado es un grupo de una o varias instrucciones, en nuestro caso Transact-SQL para SQL server, que se ejecutan secuencialmente algunas de sus caracteristicas son:
 -Aceptan parámetros de entrada y pueden devolver varios valores en forma de parámetros de salida al programa que realiza la llamada.
@@ -202,7 +202,7 @@ Los datos se obtuvieron de internet.
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
 
-## Tema: Manejo de permisos a nivel de usuarios de base de datos
+## Tema 1: Manejo de permisos a nivel de usuarios de base de datos
 
 En SQL Server, la administración de permisos es fundamental para garantizar la seguridad de los datos y la correcta gestión de accesos. Existen diferentes niveles de permisos y métodos de autenticación que permiten definir quién puede acceder y realizar operaciones en la base de datos, ya sea a nivel de servidor, base de datos o tablas específicas.
 La configuración de modos de autenticación es el primer paso para definir cómo los usuarios se autenticarán en SQL Server. Para lograr un equilibrio entre flexibilidad y seguridad, se puede optar por el modo de autenticación mixta, que admite tanto la autenticación integrada de Windows como la autenticación con usuario y contraseña de SQL Server.
@@ -282,7 +282,7 @@ El rol se ejecuta correctamente.
 
 Mientras que el otro usuario creado, al no tener permisos asignados, solo podrá conectarse a la base de datos, pero no podrá realizar ninguna operación útil.
 
-## Tema: Procedimientos y funciones almacenadas
+## Tema 2: Procedimientos y funciones almacenadas
 
 Para el desarrollo de este tema se realizaron en primer lugar 3 procedimientos, uno que realiza un insert sobre la tabla empelados de nuestra base de dados del proyecto, otro que realiza un update sobre la tabla empleados y por último uno que realiza un delete sobre la tabla emepleados. Luego se pasa a las funciones que se realizaron 3 funciones que devuelven una tabla, en la que cada una realiza una operacion sobre la tabla empleados para una determinada antiguedad, variando si se busca en un determinado año, si se busca entre un rango de fechas o si se busca discriminar por tipo de empleado. Para finalizar se realizó un procedimiento y una funcion en la que ambos reciben un mismo tipo de parámetro, un id que refiere a un empleado, y la idea a probar es que ambas devuelvan los mismos resultados y comparando la eficiencia entre ellas.
 
@@ -320,7 +320,7 @@ from Empleados e
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/ComparacionQuery.png)
 
 
-## Tema: Optimización de consultas a través de índices
+## Tema 3: Optimización de consultas a través de índices
 
 Con el objetivo de analizar la eficiencia de los distintos índices en cuanto al tiempo de respuesta al realizar determinada consulta, seleccionamos una tabla de la base de datos realizamos un script para realizar una carga masiva de datos. Luego eliminamos la clave primaria y procedemos a crear y ejecutar cada tipo de índice, registrando el tiempo de ejecucion de cada uno de ellos. A continuación se muestra en detalle los pasos seguidos para dicha prueba.
 
@@ -329,7 +329,7 @@ Con el objetivo de analizar la eficiencia de los distintos índices en cuanto al
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/BorrarIndiceAgrupado.png)
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/IndiceNoAgrupado.png)
 
-## Tema: Backup y restore. Backup en línea
+## Tema 4: Backup y restore. Backup en línea
 
 
 
@@ -345,14 +345,15 @@ Acceso al documento [PDF](https://github.com/MarceloPortillo/basesdatos_proyecto
 
 ## CAPÍTULO V: CONCLUSIONES
 
-En conclusión, el manejo de permisos y roles a nivel de usuarios en bases de datos es esencial para asegurar la seguridad y el control adecuado sobre los datos. La configuración de permisos y roles permite a los administradores de bases de datos definir qué acciones puede realizar cada usuario, ya sea desde acceder a información específica, modificarla, o ejecutar procedimientos. Esto ayuda a reducir riesgos, como accesos no autorizados y modificaciones indebidas, garantizando que solo usuarios asignados puedan realizar operaciones puntuales.
+En conclusión, la gestión de permisos y roles a nivel de usuarios es un componente crítico en el diseño de una base de datos relacional para garantizar la seguridad y el control del acceso a los datos. Esto permite a los administradores definir las acciones específicas que puede realizar cada usuario, lo cual es clave para proteger la integridad de la información y prevenir accesos y modificaciones no autorizados. La implementación adecuada de estas medidas asegura que solo los usuarios autorizados puedan interactuar con los datos según sus roles, apoyando los objetivos de control y eficiencia operativa.
 
-Además, tanto los procedimientos como las funciones ayudan a reducir el tráfico de red y favorecen la reutilización del código, lo que contribuye a una disminución en el costo de procesamiento al ejecutar las sentencias. Sin embargo, presentan diferencias importantes, y la elección entre uno u otro depende de la necesidad específica. Aunque un procedimiento puede simular el comportamiento de una función, hacerlo suele implicar un mayor costo de ejecución. Esto se debe a la cantidad y complejidad adicional de las sentencias necesarias en un procedimiento, mientras que una función puede lograr el mismo resultado de manera más eficiente y con una estructura menos compleja.
+Además, el uso de procedimientos y funciones contribuye a optimizar el rendimiento del sistema, reduciendo el tráfico de red y fomentando la reutilización del código. Esto no solo disminuye los costos de procesamiento, sino que también simplifica el mantenimiento y la evolución del sistema. Es fundamental evaluar cuándo utilizar procedimientos o funciones, ya que las funciones pueden ser más eficientes y menos complejas en determinadas circunstancias, mientras que los procedimientos permiten una mayor flexibilidad a costa de un mayor costo de ejecución.
 
-En cuanto a la optimización de consultas a través de índices podemos afirmar que conviene utilizar indices agrupados cuando las consultas más comunes implican rangos de valores, ordenación por la columna del índice o uniones frecuentes en las columnas indexadas. Es ideal para tablas donde las operaciones de lectura son más frecuentes que las de escritura.
-Sin embargo en este caso es más adecuado utilizar un índice no agrupado ya que se necesita optimizar múltiples tipos de consultas en diferentes columnas, y las operaciones de escritura son frecuentes. Esto proporciona flexibilidad y puede mejorar el rendimiento de consultas específicas sin afectar significativamente las operaciones de escritura.
+La optimización de consultas a través del uso de índices es otra estrategia esencial. Los índices agrupados son ideales para consultas que requieren rangos de valores o uniones frecuentes, mientras que los índices no agrupados son más adecuados cuando se necesita optimizar diferentes tipos de consultas en múltiples columnas, especialmente en situaciones donde las operaciones de escritura son frecuentes. Esto permite un balance entre la flexibilidad de las consultas y la eficiencia del sistema.
 
-A lo que refiere backup y restore, los procedimientos implementados en este trabajo demuestran una estrategia sólida para proteger la integridad de los datos y permitir la recuperación a puntos específicos en el tiempo, lo cual es crucial para escenarios de recuperación ante fallos y auditorías.
+Por último, la implementación de estrategias de backup y restore es indispensable para la protección de los datos y la recuperación ante fallos. Contar con procedimientos de respaldo sólidos permite asegurar la integridad de la información y la recuperación a puntos específicos en el tiempo, lo cual es crucial para auditorías y la continuidad de las operaciones.
+
+En resumen, el diseño de una base de datos que contemple estos aspectos no solo mejora la eficiencia operativa, sino que también garantiza la seguridad, escalabilidad y robustez del sistema, cumpliendo con los objetivos de administrar eficazmente la información de una cadena hotelera y apoyar su crecimiento y adaptación a futuros requerimientos.
 
 ## VI. BIBLIOGRAFÍA
 
