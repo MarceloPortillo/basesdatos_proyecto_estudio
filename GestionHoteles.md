@@ -329,9 +329,14 @@ from Empleados e
 
 Con el objetivo de analizar la eficiencia de los distintos índices en cuanto al tiempo de respuesta al realizar determinada consulta, seleccionamos una tabla de la base de datos realizamos un script para realizar una carga masiva de datos. Luego eliminamos la clave primaria y procedemos a crear y ejecutar cada tipo de índice, registrando el tiempo de ejecucion de cada uno de ellos. A continuación se muestra en detalle los pasos seguidos para dicha prueba.
 
+### Resultado de ejecucion sin indice
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Optimizacion/ConsultaSinIndice.png
 )
+### Resultado de ejecucion con indice agrupado
+![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Optimizacion/IndiceAgrupado.png)
 
+### Resultado de ejecucion con indice no agrupado
+![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Optimizacion/IndiceNoAgrupado.png)
 
 ### Tema 4: Backup y restore. Backup en línea
 
