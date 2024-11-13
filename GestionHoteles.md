@@ -213,7 +213,7 @@ Con el objetivo de analizar la eficiencia de los distintos índices en cuanto al
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/crearIndiceAgrupado.png)
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/ejecucionIndiceAgrupado.png)
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/BorrarIndiceAgrupado.png)
-
+![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/IndiceNoAgrupado.png)
 
 ## Tema: Backup y restore. Backup en línea
 
