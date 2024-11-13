@@ -1,4 +1,5 @@
 
+
 use gestionHotel_V1
 
 SET ANSI_NULLS ON
@@ -233,5 +234,69 @@ from Empleados e
 select dbo.ObtenerNombreCompleto(e.ID_Empleado)
 from Empleados e
 
-select e.ID_Empleado, e.nombre, e.apellido, dbo.EmpleadoConAntiguedad(e.ID_Empleado,4)
+select e.ID_Empleado, e.nombre, e.apellido, dbo.EmpleadoConAntiguedad(e.ID_Empleado,2)
+from Empleados e
+
+
+CREATE PROCEDURE VerificarAntiguedadEmpleados
+    @Anos int
+AS
+BEGIN
+    DECLARE @ID_Empleado int;
+    DECLARE @Nombre varchar(50);
+    DECLARE @Apellido varchar(50);
+    DECLARE @Antiguedad int;
+    DECLARE @Resultado varchar(2);
+
+    -- Crear una tabla temporal para almacenar los resultados
+    CREATE TABLE #Resultados (
+        ID_Empleado int,
+        Nombre varchar(50),
+        Apellido varchar(50),
+        CumpleAntiguedad varchar(2)
+    );
+
+    DECLARE EmpleadoCursor CURSOR FOR
+    SELECT ID_Empleado, nombre, apellido
+    FROM Empleados;
+
+    OPEN EmpleadoCursor;
+    FETCH NEXT FROM EmpleadoCursor INTO @ID_Empleado, @Nombre, @Apellido;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Calcular antigüedad usando la función CalcularAntiguedad
+        SELECT @Antiguedad = dbo.CalcularAntiguedad(e.Fecha_contratacion)
+        FROM Empleados e
+        WHERE e.ID_Empleado = @ID_Empleado;
+        
+        -- Determinar si cumple con la antigüedad
+        IF @Antiguedad >= @Anos
+            SET @Resultado = 'SI';
+        ELSE
+            SET @Resultado = 'NO';
+
+        -- Insertar el resultado en la tabla temporal
+        INSERT INTO #Resultados (ID_Empleado, Nombre, Apellido, CumpleAntiguedad)
+        VALUES (@ID_Empleado, @Nombre, @Apellido, @Resultado);
+
+        FETCH NEXT FROM EmpleadoCursor INTO @ID_Empleado, @Nombre, @Apellido;
+    END;
+
+    -- Cerrar y liberar el cursor
+    CLOSE EmpleadoCursor;
+    DEALLOCATE EmpleadoCursor;
+
+    -- Seleccionar los resultados desde la tabla temporal
+    SELECT * FROM #Resultados;
+
+    -- Eliminar la tabla temporal
+    DROP TABLE #Resultados;
+END;
+GO
+
+-- Ejecutar el procedimiento con el parámetro de años de antigüedad deseado
+EXEC VerificarAntiguedadEmpleados @Anos = 2;
+
+select e.ID_Empleado, e.nombre, e.apellido, dbo.EmpleadoConAntiguedad(e.ID_Empleado,2)
 from Empleados e
