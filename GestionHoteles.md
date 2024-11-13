@@ -232,6 +232,9 @@ resultados encontrados en el capítulo anterior. El alumno debe examinar los hal
 su propia opinión respecto a los mismos y determinar si los objetivos del Trabajo Práctico fueron
 alcanzados.*************
 
+Como conclusión podemos afirmar que conviene utilizar indices agrupados cuando las consultas más comunes implican rangos de valores, ordenación por la columna del índice o uniones frecuentes en las columnas indexadas. Es ideal para tablas donde las operaciones de lectura son más frecuentes que las de escritura.
+Sin embargo en este caso es más adecuado utilizar un índice no agrupado ya que se necesita optimizar múltiples tipos de consultas en diferentes columnas, y las operaciones de escritura son frecuentes. Esto proporciona flexibilidad y puede mejorar el rendimiento de consultas específicas sin afectar significativamente las operaciones de escritura.
+
 ## VI. BIBLIOGRAFÍA
 
 
