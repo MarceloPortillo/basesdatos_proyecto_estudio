@@ -337,60 +337,60 @@ Verificación y Configuración del Modo de Recuperación:
 
 Se verifica que la base de datos esté en modo de recuperación FULL y se cambia si es necesario.
 En este caso estaba en modo SIMPLE
-![Modo_simple](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/1_verificaModo1SIMPLE.png)
+![Modo_simple](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/1_verificaModo1SIMPLE.png)
 Se cambia a FULL
-![Modo_full](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/2_verificaModoFULL.png)
+![Modo_full](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/2_verificaModoFULL.png)
 
 Realización del Backup Completo:
 
 Primero se debe hacer click derecho en la base de datos e ir a task - backup
-![Task_backup](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/3_taskBackUp.png)
+![Task_backup](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/3_taskBackUp.png)
 Luego seleccionar la ruta y el nombre del archivo .bak y hacer click en Script
-![Elegir_archivo](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/4_backupFull.png)
+![Elegir_archivo](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/4_backupFull.png)
 Se realiza un backup completo de la base de datos gestion_Hotel.
-![Hacer_backupFull](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/5_hacerBackUp.png)
+![Hacer_backupFull](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/5_hacerBackUp.png)
 
 Inserción de Datos:
 
 Se insertan 10 registros en la tabla Huespedes.
-![Insercion1](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/6_genero10inserts.png)
+![Insercion1](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/6_genero10inserts.png)
 
 Backup del Log de Transacciones:
 
 Se realiza un primer backup del log de transacciones, que captura los cambios después del backup completo.
-![Elegir_archivo_log](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/7_backupLog.png)
-![Backup_log1](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/8_hacerbackupLogYregistraHora.png)
+![Elegir_archivo_log](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/7_backupLog.png)
+![Backup_log1](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/8_hacerbackupLogYregistraHora.png)
 
 Inserción Adicional de Datos:
 
 Se insertan otros 10 registros en la tabla Huespedes.
-![Insercion2](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/9_genera10insertsmas.png)
+![Insercion2](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/9_genera10insertsmas.png)
 
 Backup del Segundo Log de Transacciones:
 
 Se realiza un segundo backup del log, registrando más cambios recientes.
-![Backup_log2](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/10_hacerbackupLog2.png)
+![Backup_log2](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/10_hacerbackupLog2.png)
 
 Restauración de la Base de Datos:
 
 Primero se debe eliminar la base de datos [gestion_Hotel] y luego hacer click derecho en Database - Restore database
-![Restore_database](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/11_restoreDatabase.png)
+![Restore_database](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/11_restoreDatabase.png)
 Luego seleccionar el archivo .bak a restaurar 
-![Seleccionar_archivo_restaurar](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/12_elegirDatabaseFull.png)
+![Seleccionar_archivo_restaurar](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/12_elegirDatabaseFull.png)
 En Options marcar WITH REPLACE y poner en NORECOVERY y seleccionar Script
-![REPLACE_NORECOVERY](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/13_ponerREPLACEyNORECOVERY.png)
+![REPLACE_NORECOVERY](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/13_ponerREPLACEyNORECOVERY.png)
 La base de datos queda en un estado (Restoring...) lo que significa que aún no está lista para ser utilizada 
-![Database_restoring](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/14_restoreFULLNORECOVERY.png)
+![Database_restoring](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/14_restoreFULLNORECOVERY.png)
 La base de datos se restaura al estado después del primer backup del log, mostrando los primeros 13 registros.
-![Seleccionar_archivo_restaurar](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/15_restoreLOG1.png)
-![Database_restore](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/16_restoreLOG1bien.png)
-![Verifico_restoreLOG1](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/17_verificoRestoreLOG1.png)
+![Seleccionar_archivo_restaurar](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/15_restoreLOG1.png)
+![Database_restore](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/16_restoreLOG1bien.png)
+![Verifico_restoreLOG1](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/17_verificoRestoreLOG1.png)
 
 Restauración Completa:
 
 Se aplica el segundo log de transacciones, restaurando la base de datos al estado final con los 23 registros.
-![Restore](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/18_restauroTodo.png)
-![Verifico_restore_completo](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/19_ResultadoFinal.png)
+![Restore](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/18_restauroTodo.png)
+![Verifico_restore_completo](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/19_ResultadoFinal.png)
 
 
 ### Diagrama relacional
