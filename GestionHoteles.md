@@ -108,6 +108,12 @@ adecuada de los términos que utilizamos. En nuestro caso: Innovaciones Tecnoló
 Globalización, Crecimiento, Desarrollo Regional o Local, cadenas productivas, clusters,
 desarrollo sustentable, etc.*****************
 
+## Tema: Optimización de consultas a través de índices
+Un índice es una estructura en disco asociada con una tabla o vista que acelera la recuperación de filas de la tabla o vista. Un índice contiene claves construidas a partir de una o más columnas en la tabla o vista. Estas claves se almacenan en una estructura (B-árbol) que permite a SQL Server encontrar la fila o filas asociadas con los valores de clave de forma rápida y eficiente. Cuando se ejecuta esta consulta, el optimizador de consultas evalúa cada método disponible para recuperar los datos y selecciona el método más eficiente. El método puede ser un escaneo de tabla, o puede estar escaneando uno o más índices si existen.
+Existen dos tipos de índices, los agrupados y los no agrupados. Los primeros ordenan y almacenan las filas de datos en la tabla o vista en función de sus valores clave. Estos valores clave son las columnas incluidas en la definición de índice. Solo puede haber un índice agrupado por tabla, porque las filas de datos en sí mismas se pueden almacenar en un solo orden. La única vez que las filas de datos en una tabla se almacenan en orden ordenado es cuando la tabla contiene un índice agrupado. Cuando una tabla tiene un índice agrupado, la tabla se denomina tabla agrupada. Este tipo de índice se asemeja a las conocidas guías telefónicas.
+En el caso de los segundo, los índices no agrupados, tienen una estructura separada de las filas de datos. Un índice no agrupado contiene los valores de clave de índice no agrupados y cada entrada de valor de clave tiene un puntero a la fila de datos que contiene el valor de clave. El puntero de una fila de índice en un índice no agrupado a una fila de datos se denomina localizador de filas. La estructura del localizador de filas depende de si las páginas de datos se almacenan en un montón o en una tabla agrupada. Para un montón, un localizador de filas es un puntero a la fila. Para una tabla agrupada, el localizador de filas es la clave de índice agrupada. Este tipo de índice se asemeja al de un libro, por contener en sus hojas los punteros a las posiciones de memoria donde se almacena la información.
+Ambos tipos de índices tienen sus ventajas y sus desventajas, se pueden crear múltiples índices no agrupados sobre una tabla, lo que puede acelerar consultas que no se benefician del índice agrupado. Sin embargo  cada vez que se inserta, actualiza o elimina una fila, los índices no agrupados también deben actualizarse, lo que puede afectar el rendimiento de las operaciones de escritura.
+
 ## CAPÍTULO III: METODOLOGÍA SEGUIDA
 
 ***********En este capítulo se presenta el plan seguido o las acciones llevadas a cabo para realizar el trabajo,
@@ -130,6 +136,7 @@ datos; por ej., a través de entrevistas, de revisión bibliográfica, de Intern
 ## Tema: Procedimientos y funciones almacenadas
 
 ## Tema: Optimización de consultas a través de índices
+
 
 ## Tema: Backup y restore. Backup en línea
 
