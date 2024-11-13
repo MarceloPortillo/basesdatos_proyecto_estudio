@@ -200,6 +200,8 @@ En el siguiente enlace se encuentra el script sql referido a este tema
 ## Estructura del procedimiento Insert Empleados:
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Estructura_Insert_Empleado.png)
 
+## Estructura de la función FuncionCalcularAntiguedad:
+![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Funcion_CalculaAntiguedad.png)
 
 ## Tema: Optimización de consultas a través de índices
 
