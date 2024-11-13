@@ -58,7 +58,19 @@ ii. Objetivos Específicos
 
 3- Garantizar que el diseño de la base de datos respete la integridad y consistencia de la información, evitando redundancias y facilitando su consulta.
 
-4- Proveer una estructura de base de datos que facilite la escalabilidad para futuros requerimientos, como la inclusión de más hoteles o nuevas funcionalidades
+4- Proveer una estructura de base de datos que facilite la escalabilidad para futuros requerimientos, como la inclusión de más hoteles o nuevas funcionalidades.
+
+5- Entender el manejo de permisos y roles en bases de datos.
+
+6- Aplicar permisos de lectura, escritura y ejecución para diferentes roles y usuarios.
+
+7- Proveer una estructura que permita reutilizar código, reduciendo las duplicaciones y facilitando el mantenimiento.
+
+8- Definir procedimientos y funciones almacenadas que permitan ejecutar consultas rápidamente.
+
+9- Facilitar la búsqueda de registros específicos en una tabla grande con la implementación de índices.
+
+10- Garantizar la protección de los datos contra fallos del sistema, realizando periódicamente copias de seguridad. 
 
 ### Alcance del Trabajo Práctico
 
