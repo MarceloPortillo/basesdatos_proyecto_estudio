@@ -184,7 +184,7 @@ Para el desarrollo de este tema se realizaron en primer lugar 3 procedimientos, 
 En el siguiente enlace se encuentra el script sql referido a este tema
 
 ##Estructura del procedimiento Insert Empleados:
-![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/doc/Estructura_Insert_Empleado.png)
+![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Estructura_Insert_Empleado.png)
 
 
 ## Tema: Optimización de consultas a través de índices
