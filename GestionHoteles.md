@@ -201,6 +201,78 @@ Una vez configurado el modo de autenticación, el siguiente paso es crear y gest
 
 A continuacion se mostraran los pasos necesarios.
 
+Primero se debe configurar el motor en modo mixto que permita ingresar por autenticación integrada con Windows  y por usuario y contraseña de base de datos.
+
+## Autenticacion:
+![Autenticacion](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/Autenticacion.png
+
+## Login:
+![Login](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/UsuarioContraseña.png
+
+ Si el usuario no tiene un login (cuenta de autenticación a nivel de servidor), debes crear uno primero:
+
+ ## Creación de login :
+![Creación](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/CreacionLogin.png
+
+Creamos los usuarios de la base de datos asociados al login 
+
+ ## Creación de usuarios de base de datos :
+![CreaciónUsuario](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/CreacionUsuario.png
+
+
+Asignamos los permisos de admnistrador a Portillo Marcelo y el de solo lectura a Rodriguez Gaston
+
+## Asignamos los permisos
+![Asignacion](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/AsignacionPermisos.png
+
+Prueba de inserción a través de procedimiento con el usuario de solo lectura.
+
+## Prueba 1
+![Prueba](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/InserccionProcedimientoDenegado.png
+
+Lo mismo ocurre si queremos realizar un INSERT.
+
+## Prueba 2
+![Prueba](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/InsertDenegado.png
+
+Pero, si asignamos el permiso de insertar datos a través de un procedimiento, vemos que ocurre lo siguiente:
+
+## Prueba 3
+![Prueba](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/AsignacionInserccionProcedimiento.png
+
+En cuanto al usuario administrador que tiene permiso a todo no tiene ningún problema en hacer inserciones a través de procedimientos almacenados o con la clausula INSERT.
+
+Permisos a nivel de roles del DBMS:
+
+Se crean los usuarios:
+
+## Creación de usuarios
+![CreaciónUsuarios](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/CreacionLoginUsuario.png
+
+Se crea  un rol que permita solo lectura a algunas de las tablas creadas
+
+## Creación de Rol
+![Roles](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/CrearRol.png
+
+
+Damos permiso de solo lectura sobre la tabla Empleados a este rol.
+
+## Asignación de permiso de solo lectura sobre la tabla Empleados a este Rol
+![Roles](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/DarPermisoRolTabla.png
+
+
+Asignamos el rol creado, llamado "solo lectura", al usuario Romero Karin.
+
+## Asignación de Rol al usuario
+![AsignacionRol](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/AsignacionRolLecturaRomero.png
+
+El rol se ejecuta correctamente.
+
+## Prueba 4
+![Prueba](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/LecturaExitosa.png
+
+Mientras que el otro usuario creado, al no tener permisos asignados, solo podrá conectarse a la base de datos, pero no podrá realizar ninguna operación útil.
+
 
 ## Tema: Procedimientos y funciones almacenadas
 
