@@ -208,10 +208,10 @@ En el siguiente enlace se encuentra el script sql referido a este tema
 
 ## Comparación de los planes de ejecución de una funcion y de un procedimiento que devuelven el mismo resultado
 
-### Plan de ejecución de la función FuncionCalcularEdad
+### Plan de ejecución de la función FuncionCalcularAntiguedad:
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Ejecucion_FuncionCalcularAntiguedad.png)
 
-## Plan de ejecución del procedimiento sp_CalcularEdadConBucle
+## Plan de ejecución del procedimiento CalcularAntiguedadDelConBucle:
 ![Estructura Insert](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/CalcularEdadConBucle.png)
 
 
