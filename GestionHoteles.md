@@ -203,7 +203,7 @@ A continuacion se mostraran los pasos necesarios.
 
 Primero se debe configurar el motor en modo mixto que permita ingresar por autenticación integrada con Windows  y por usuario y contraseña de base de datos.
 
-## Autenticacion:
+## Autenticación:
 ![Autenticacion](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/Autenticacion.png)
 
 ## Login:
