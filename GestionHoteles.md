@@ -269,7 +269,7 @@ Asignamos el rol creado, llamado "solo lectura", al usuario Romero Karin.
 El rol se ejecuta correctamente.
 
 ## Prueba 4
-![Prueba](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/LecturaExitosa.png
+![Prueba](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/Permisos_Rol/LecturaExitosa.png)
 
 Mientras que el otro usuario creado, al no tener permisos asignados, solo podrá conectarse a la base de datos, pero no podrá realizar ninguna operación útil.
 
