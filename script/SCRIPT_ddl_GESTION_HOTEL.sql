@@ -233,3 +233,4 @@ CREATE TABLE ReservasHabitaciones
   CONSTRAINT FK_ReservasHabitaciones_Reservas FOREIGN KEY (ID_Reserva, ID_Huesped) REFERENCES Reservas(ID_Reserva, ID_Huesped),
   CONSTRAINT FK_ReservasHabitaciones_Habitaciones FOREIGN KEY (Nro_habitacion, ID_Hotel) REFERENCES Habitaciones(Nro_habitacion, ID_Hotel)
 );
+
