@@ -159,19 +159,16 @@ En el caso de los segundo, los índices no agrupados, tienen una estructura sepa
 Ambos tipos de índices tienen sus ventajas y sus desventajas, se pueden crear múltiples índices no agrupados sobre una tabla, lo que puede acelerar consultas que no se benefician del índice agrupado. Sin embargo  cada vez que se inserta, actualiza o elimina una fila, los índices no agrupados también deben actualizarse, lo que puede afectar el rendimiento de las operaciones de escritura.
 
 ## CAPÍTULO III: METODOLOGÍA SEGUIDA
+El proyecto lo llevamos a cabo mediante la búsqueda individual de información respecto al tema asignado a cada miembro del grupo. Realizamos el diagrama de relación-entidad y nos dividimos en partes equitativa la investigación acerca de las diferentes técnicas de trabajo (Manejo de Permisos a Nivel de Usuarios, Procedimientos y funciones almacenadas, Back Up y Restore, optimización de consultas) y el desarrollo de las mismas. Fuimos proponiendo distintas fechas de reuniones para ir compartiendo lo desarrollado y acoplando las distintas partes del proyecto, eso lo hicimos de manera virtual para tener una mejor visión del código y la búsqueda de información. El informe lo realizamos entre todos ya que fuimos aportando ideas y uniendo lo investigado, así como la carga de datos ya que contiene muchas claves foráneas y se hacía imposible ir viendo los errores ya que algunas tablas dependen de otras.
 
-***********En este capítulo se presenta el plan seguido o las acciones llevadas a cabo para realizar el trabajo,
-las dificultades encontradas, y cualquier otra información que proporcione la idea de cómo se
-realizó el trabajo.
-A fin de dar una idea de la metodología seguida, se deben observar los siguientes puntos:
-a. Descripción de cómo se realizó el Trabajo Práctico.
-Descripción de los pasos seguidos para realizar el trabajo, las actividades realizadas y
-cualquier otra información que ayude a tener una idea del esfuerzo desplegado por el
-alumno para la realización del trabajo.
-b. Herramientas (Instrumentos y procedimientos)
-Descripción de los instrumentos y procedimientos utilizados para la recolección y
-tratamiento de la información. El alumno debe mencionar con qué método obtuvo los
-datos; por ej., a través de entrevistas, de revisión bibliográfica, de Internet, etc*******
+Herramientas Utilizadas
+
+SQL Server.
+SQL Server Management Studio (SSMS): Ofrece interfaces gráficas para la gestión de permisos y roles en bases de datos
+WhatsApp: Fue unos de los medios más utilizado para ir coordinando las reuniones, respondiendo consultas, y pasar información no solo del proyecto si no de la materia en sí.
+Meet: Fue el medio que utilizamos para llevar a cabo algunas reuniones virtuales e ir compartiendo el proceso en la creación del proyecto ya que es una plataforma gratuita y que no requiere una conexión a internet muy buena.
+GitHub: fue la última herramienta en incorporar, porque fue donde cargamos los códigos para compartirnos y dimos permisos de colaborador a los profesores que desarrollan la materia.
+Los datos se obtuvieron de internet.
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
 
