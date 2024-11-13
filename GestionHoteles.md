@@ -113,6 +113,14 @@ datos; por ej., a través de entrevistas, de revisión bibliográfica, de Intern
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
 
+## Tema: Manejo de permisos a nivel de usuarios de base de datos
+
+## Tema: Procedimientos y funciones almacenadas
+
+## Tema: Optimización de consultas a través de índices
+
+## Tema: Backup y restore. Backup en línea
+
 ### Diagrama relacional
 ![diagrama_relacional](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/diagramaRelacional.png)
 
