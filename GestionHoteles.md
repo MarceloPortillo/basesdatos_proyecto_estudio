@@ -209,7 +209,7 @@ alcanzados.*************
 
 ## VI. BIBLIOGRAFÍA
 
-****Bibliografía mencionada: Se deben citar de manera normalizada todos los documentos
-consultados y efectivamente utilizados para la realización del trabajo. La forma correcta de
-realizar las citas es incluyendo: autor (es), fecha de publicación, título, información acerca de la
-publicación.********
+
+Microsoft. (n.d.). Stored procedures (Database Engine). Microsoft Learn. https://learn.microsoft.com/es-es/sql/relational-databases/stored-procedures/stored-procedures-database-engine?view=sql-server-ver16
+
+
