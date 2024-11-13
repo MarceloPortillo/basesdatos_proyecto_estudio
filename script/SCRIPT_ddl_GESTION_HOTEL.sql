@@ -184,13 +184,13 @@ CREATE TABLE Reservas
 go
 CREATE TABLE Empleados
 (
-  ID_Empleado INT NOT NULL,
+  ID_Empleado INT IDENTITY(1,1) NOT NULL,
   Nombre VARCHAR(100) NOT NULL,
   Apellido VARCHAR(100) NOT NULL,
   DNI VARCHAR(8) NOT NULL,
   Telefono VARCHAR(15) NOT NULL,
   Direccion VARCHAR(200) NOT NULL,
-  Email VARCHAR (50) NOT NULL,
+  Email VARCHAR(50) NOT NULL,
   Fecha_contratacion DATE NOT NULL,
   ID_Cargo INT NOT NULL,
   ID_Turno INT NOT NULL,
@@ -204,7 +204,8 @@ CREATE TABLE Empleados
   CONSTRAINT UQ_Empleados_DNI UNIQUE (DNI),
   CONSTRAINT UQ_Empleados_Email UNIQUE (Email)
 );
-go
+GO
+
 CREATE TABLE Consumo
 (
   ID_Consumo INT NOT NULL,

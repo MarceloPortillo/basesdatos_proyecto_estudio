@@ -1,4 +1,5 @@
 
+
 use gestionHotel_V1
 
 SET ANSI_NULLS ON
@@ -7,9 +8,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 -- *******************************************************
--- Desarrollado por: <Gast髇>
--- Fecha de implementaci髇: <23/10/2024>
--- Prop髎ito: Inserci髇 de registros en la tabla 'Empleados'
+-- Desarrollado por: <Gast贸n>
+-- Fecha de implementaci贸n: <23/10/2024>
+-- Prop贸sito: Inserci贸n de registros en la tabla 'Empleados'
 -- *******************************************************
 
 CREATE PROCEDURE InsertEmpleado
@@ -61,9 +62,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 -- ****************************************************
--- Creado por:   <Gast髇>
--- Fecha de creaci髇: <23/10/2024>
--- Descripci髇: Modificaci髇 de los datos de la tabla 'Empleados'
+-- Creado por:   <Gast贸n>
+-- Fecha de creaci贸n: <23/10/2024>
+-- Descripci贸n: Modificaci贸n de los datos de la tabla 'Empleados'
 -- ****************************************************
 CREATE PROCEDURE UpdateEmpleado
 	
@@ -102,9 +103,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 -- ******************************************************
--- Desarrollador: <Gast髇>
--- Fecha de creaci髇: <24/10/2024>
--- Prop髎ito: Eliminaci髇 de registros de la tabla 'Empleados'
+-- Desarrollador: <Gast贸n>
+-- Fecha de creaci贸n: <24/10/2024>
+-- Prop贸sito: Eliminaci贸n de registros de la tabla 'Empleados'
 -- ******************************************************
 CREATE PROCEDURE DeleteEmpleado
 	
@@ -151,25 +152,25 @@ EXEC InsertEmpleado
 	select * from Empleados;
 
 --==================================================================================================
---1. Inserci髇 Directa con Sentencias INSERT
--- Inserci髇 directa de un lote de datos
+--1. Inserci贸n Directa con Sentencias INSERT
+-- Inserci贸n directa de un lote de datos
 INSERT INTO Empleados (Nombre, Apellido, dni, Telefono, Direccion, email, Fecha_contratacion, ID_Cargo, ID_Turno, ID_Hotel, Fecha_creacion)
 VALUES 
-('Ana', 'Gonz醠ez', '23456789', '555-1235', 'Calle Real 456', 'ana.gonzalez@example.com', '2024-10-01', 1, 2, 1, GETDATE()),
+('Ana', 'Gonz谩lez', '23456789', '555-1235', 'Calle Real 456', 'ana.gonzalez@example.com', '2024-10-01', 1, 2, 1, GETDATE()),
 
---2. Inserci髇 de un Lote de Datos usando Procedimientos Almacenados
+--2. Inserci贸n de un Lote de Datos usando Procedimientos Almacenados
 EXEC InsertEmpleado 'Gaston', 'Morales', '32658974', '3794859674', 'San Juan 1485',
 'gaston.Morales@hotmail.com', '2023-06-01', 1, 2, 1;
 
 --3. Se realiza un Update de un Lote de Datos usando Procedimientos Almacenados. 
-EXEC UpdateEmpleado 5, 'Gast髇', 'Morales', '32658974', '3794859674', 'San Juan 1485',
+EXEC UpdateEmpleado 3, 'Gast贸n', 'Morales', '32658974', '3794859674', 'San Juan 1485',
 'gaston.Morales@hotmail.com', '2023-06-01', 1, 2, 1;
 
 --4. Elimianr un empleado
-EXEC DeleteEmpleado 5;
+EXEC DeleteEmpleado 3;
 
 --==================================================================================================
---Funci髇 para Calcular la Edad a Partir de la Fecha de Contrataci髇:
+--Funci贸n para Calcular la Edad a Partir de la Fecha de Contrataci贸n:
 
 CREATE FUNCTION CalcularAntiguedad(
     @FechaContratacion date
@@ -188,7 +189,7 @@ BEGIN
 END;
 GO
 
---Funci髇 para Obtener el Nombre Completo del Empleado:
+--Funci贸n para Obtener el Nombre Completo del Empleado:
 
 CREATE FUNCTION ObtenerNombreCompleto(
     @ID_Empleado int
@@ -205,7 +206,7 @@ BEGIN
 END;
 GO
 
---Funci髇 para Verificar si un Empleado Lleva M醩 de X A駉s en la Empresa:
+--Funci贸n para Verificar si un Empleado Lleva M谩s de X A帽os en la Empresa:
 
 CREATE FUNCTION EmpleadoConAntiguedad(
     @ID_Empleado int,
@@ -224,7 +225,7 @@ BEGIN
    END;
 GO
 
---====================================prueba de ejecuci髇 antiguedad===================================
+--====================================prueba de ejecuci贸n antiguedad===================================
 
 
 select e.ID_Empleado, e.nombre, e.apellido, dbo.CalcularAntiguedad(e.Fecha_contratacion) as 'Antiguedad del empleado'
@@ -233,5 +234,69 @@ from Empleados e
 select dbo.ObtenerNombreCompleto(e.ID_Empleado)
 from Empleados e
 
-select e.ID_Empleado, e.nombre, e.apellido, dbo.EmpleadoConAntiguedad(e.ID_Empleado,3)
+select e.ID_Empleado, e.nombre, e.apellido, dbo.EmpleadoConAntiguedad(e.ID_Empleado,2)
+from Empleados e
+
+
+CREATE PROCEDURE VerificarAntiguedadEmpleados
+    @Anos int
+AS
+BEGIN
+    DECLARE @ID_Empleado int;
+    DECLARE @Nombre varchar(50);
+    DECLARE @Apellido varchar(50);
+    DECLARE @Antiguedad int;
+    DECLARE @Resultado varchar(2);
+
+    -- Crear una tabla temporal para almacenar los resultados
+    CREATE TABLE #Resultados (
+        ID_Empleado int,
+        Nombre varchar(50),
+        Apellido varchar(50),
+        CumpleAntiguedad varchar(2)
+    );
+
+    DECLARE EmpleadoCursor CURSOR FOR
+    SELECT ID_Empleado, nombre, apellido
+    FROM Empleados;
+
+    OPEN EmpleadoCursor;
+    FETCH NEXT FROM EmpleadoCursor INTO @ID_Empleado, @Nombre, @Apellido;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Calcular antig眉edad usando la funci贸n CalcularAntiguedad
+        SELECT @Antiguedad = dbo.CalcularAntiguedad(e.Fecha_contratacion)
+        FROM Empleados e
+        WHERE e.ID_Empleado = @ID_Empleado;
+        
+        -- Determinar si cumple con la antig眉edad
+        IF @Antiguedad >= @Anos
+            SET @Resultado = 'SI';
+        ELSE
+            SET @Resultado = 'NO';
+
+        -- Insertar el resultado en la tabla temporal
+        INSERT INTO #Resultados (ID_Empleado, Nombre, Apellido, CumpleAntiguedad)
+        VALUES (@ID_Empleado, @Nombre, @Apellido, @Resultado);
+
+        FETCH NEXT FROM EmpleadoCursor INTO @ID_Empleado, @Nombre, @Apellido;
+    END;
+
+    -- Cerrar y liberar el cursor
+    CLOSE EmpleadoCursor;
+    DEALLOCATE EmpleadoCursor;
+
+    -- Seleccionar los resultados desde la tabla temporal
+    SELECT * FROM #Resultados;
+
+    -- Eliminar la tabla temporal
+    DROP TABLE #Resultados;
+END;
+GO
+
+-- Ejecutar el procedimiento con el par谩metro de a帽os de antig眉edad deseado
+EXEC VerificarAntiguedadEmpleados @Anos = 2;
+
+select e.ID_Empleado, e.nombre, e.apellido, dbo.EmpleadoConAntiguedad(e.ID_Empleado,2)
 from Empleados e
