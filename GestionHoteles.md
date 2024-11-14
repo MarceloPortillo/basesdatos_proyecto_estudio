@@ -344,7 +344,7 @@ Con el objetivo de conocer las técnicas de backup y restore, incluyendo backup 
 
 Verificación y Configuración del Modo de Recuperación:
 
-Se verifica que la base de datos esté en modo de recuperación FULL y se cambia si es necesario.
+Se verifica que la base de datos esté en modo de recuperación FULL, necesario para respaldos de logs de transacciones, y se cambia si es necesario.
 
 En este caso estaba en modo SIMPLE
 ![Modo_simple](https://github.com/MarceloPortillo/basesdatos_proyecto_estudio/blob/main/doc/backup/1_verificaModo1SIMPLE.png)
